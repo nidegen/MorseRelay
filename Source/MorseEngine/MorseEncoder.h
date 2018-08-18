@@ -30,6 +30,7 @@ class MorseEncoder {
   void morseWord(const std::string& word);
   void morseMessage(const std::string& message);
   void morseWordSeparator();
+  void clear();
   
  private:
   

@@ -27,6 +27,10 @@ MorseEncoder::MorseEncoder(std::function<void (bool)> callback) {
   });
 }
 
+void MorseEncoder::clear() {
+  
+}
+
 void MorseEncoder::terminate() {
   callOnEncoderThread([this]() {
     quit_ = true;

@@ -11,4 +11,5 @@
 @interface FrameProcessor : NSObject <AVCaptureVideoDataOutputSampleBufferDelegate>
 - (void)setWordDetectedCallback: (void(^)(NSString* string)) callback;
 - (void)setSymbolDetectedCallback: (void(^)(NSString* string)) callback;
+- (void)setSignalDetectionEventCallback: (void(^)(bool signalStarted)) callback;
 @end

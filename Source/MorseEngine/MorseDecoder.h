@@ -17,9 +17,14 @@
 
 class MorseDecoder {
  public:
+  MorseDecoder(){};
+  
+  void reset(){};
   void setSymbolDecodedCallback(std::function<void (const std::string&)> callback);
   void setWordDecodedCallback(std::function<void (const std::string&)> callback);
+  
   void finishReading();
+  
   void signalEndDetected();
   void signalStartDetected();
   

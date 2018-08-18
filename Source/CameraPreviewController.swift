@@ -10,7 +10,6 @@ import AVFoundation
 import CoreImage
 
 class CameraPreviewController: UIViewController {
-  
   var textOutput: UITextField!
   
   // MARK: - Properties
@@ -31,6 +30,32 @@ class CameraPreviewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    frameProcessor.setWordDetectedCallback { word in
+      DispatchQueue.main.async {
+        self.navigationItem.title = word
+        self.textOutput.text = (self.textOutput.text ?? "") + "" + word!
+      }
+    }
+    
+    frameProcessor.setSymbolDetectedCallback { symbol in
+      DispatchQueue.main.async {
+        self.navigationItem.title = symbol
+        self.textOutput.text = (self.textOutput.text ?? "") + symbol!
+      }
+    }
+    
+//    frameProcessor.setSignalDetectionEventCallback { detectedSignal in
+//      DispatchQueue.main.async {
+//        if detectedSignal {
+//          // Detected signal switch on
+//          self.navigationItem.title = "Signal!"
+//        } else {
+//          // Detected signal switch off
+//          self.navigationItem.title = "No"
+//        }
+//      }
+//    }
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -91,7 +116,7 @@ class CameraPreviewController: UIViewController {
       preview.frame = view.bounds
       preview.backgroundColor = UIColor.black.cgColor
       preview.videoGravity = .resizeAspect
-      view.layer.addSublayer(preview)
+      view.layer.insertSublayer(preview, at: 0)
       self.previewLayer = preview
       
       let output = AVCaptureVideoDataOutput()
@@ -123,33 +148,13 @@ class CameraPreviewController: UIViewController {
   override func loadView() {
     super.loadView()
     textOutput = UITextField(frame: .zero)
-    frameProcessor.setWordDetectedCallback { word in
-      self.textOutput.text = (self.textOutput.text ?? "") + "" + word!
-    }
-    frameProcessor.setSymbolDetectedCallback { symbol in
-      self.textOutput.text = (self.textOutput.text ?? "") + symbol!
-    }
-  }
-}
-
-func toggleTorch(on: Bool) {
-  guard let device = AVCaptureDevice.default(for: .video) else { return }
-  
-  if device.hasTorch {
-    do {
-      try device.lockForConfiguration()
-      
-      if on == true {
-        device.torchMode = .on
-      } else {
-        device.torchMode = .off
-      }
-      
-      device.unlockForConfiguration()
-    } catch {
-      print("Torch could not be used")
-    }
-  } else {
-    print("Torch is not available")
+    let hudView = UIImageView(image: UIImage(named: "HUDImage"))
+    hudView.contentMode = .center
+    view.addSubview(hudView)
+    hudView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([hudView.heightAnchor.constraint(equalTo: view.heightAnchor),
+                                 hudView.widthAnchor.constraint(equalTo: view.widthAnchor),
+                                 hudView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                                 hudView.centerYAnchor.constraint(equalTo: view.centerYAnchor)])
   }
 }

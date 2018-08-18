@@ -18,7 +18,7 @@ class EncoderViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     #if DEBUG
-    flashlightEncoder?.emitMorseMessage("SMS and you")
+//    flashlightEncoder?.emitMorseMessage("SMS and you")
     #endif
   }
   

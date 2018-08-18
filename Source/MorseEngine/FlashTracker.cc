@@ -8,13 +8,16 @@
 
 #include "FlashTracker.h"
 
-/* static */
-bool FlashTracker::processFrame(const cv::Mat& frame) {
+float getAverageLuminance(const cv::Mat& frame) {
+  cv::Scalar average = cv::mean(frame);
+  return float(average(0));
+}
+
+float getLuminanceOfBrightestSpot(const cv::Mat& frame) {
   cv::Point min_loc, max_loc;
   double min, max;
   cv::Mat blurred_frame;
   
-  // acv::GaussianBlur(<#cv::InputArray src#>, <#cv::OutputArray dst#>, <#cv::Size ksize#>, <#double sigmaX#>)
   cv::GaussianBlur(frame, blurred_frame, cv::Size(3,3), 0);
   cv::minMaxLoc(frame, &min, &max, &min_loc, &max_loc);
   
@@ -33,9 +36,16 @@ bool FlashTracker::processFrame(const cv::Mat& frame) {
   int threshold_type = cv::THRESH_BINARY;
   int block_size = 5;
   double constant = 12.3;
-  //  cv::adaptiveThreshold(flash_arsignalStartDetectedea, output, <#double maxValue#>, <#int adaptiveMethod#>, <#int thresholdType#>, <#int blockSize#>, <#double C#>)
   cv::adaptiveThreshold(flash_area, output, max_value, adaptive_mode, threshold_type, block_size, constant);
-  
   // Hacked heuristic: is max lightness above 0.9?
   return (max > 0.9);
+}
+
+/* static */
+float FlashTracker::processFrame(const cv::Mat& frame) {
+  static float previous_luminance = 1;
+  float frame_luminance = getAverageLuminance(frame);
+  float delta = frame_luminance/(previous_luminance + 0.001);
+  previous_luminance = frame_luminance;
+  return delta;
 }

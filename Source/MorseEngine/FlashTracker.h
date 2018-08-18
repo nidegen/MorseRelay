@@ -18,7 +18,7 @@
 
 class FlashTracker {
  public:
-  static bool processFrame(const cv::Mat& frame);
+  static float processFrame(const cv::Mat& frame);
 };
 
 #endif // FLASH_DETECTOR_H_

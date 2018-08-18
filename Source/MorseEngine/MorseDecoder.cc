@@ -22,12 +22,15 @@ void MorseDecoder::finishReading() {
   if (last_pause_duration_.count() < kCharSeparationDuration * 1.2) {
     std::string symbol = MorseMapper::getSymbol(signal_history_);
     symbol_history.append(symbol);
-    did_decode_symbol_callback_(symbol);
+    if (did_decode_symbol_callback_)
+      did_decode_symbol_callback_(symbol);
     signal_history_.clear();
   } else if (last_pause_duration_.count() < kWordSeparationDuration * 1.2) {
     std::string symbol = MorseMapper::getSymbol(signal_history_);
     symbol_history.append(symbol);
-    did_decode_word_callback_(symbol_history);
+    
+    if (did_decode_word_callback_)
+      did_decode_word_callback_(symbol_history);
     signal_history_.clear();
     symbol_history.clear();
   }
@@ -52,12 +55,14 @@ void MorseDecoder::signalStartDetected() {
     std::string symbol = MorseMapper::getSymbol(signal_history_);
     symbol_history.append(symbol);
     signal_history_.clear();
-    did_decode_symbol_callback_(symbol);
+    if (did_decode_symbol_callback_)
+      did_decode_symbol_callback_(symbol);
   } else if (last_pause_duration_.count() < kWordSeparationDuration * 1.2) {
     std::string symbol = MorseMapper::getSymbol(signal_history_);
     symbol_history.append(symbol);
     signal_history_.clear();
-    did_decode_word_callback_(symbol_history);
+    if (did_decode_word_callback_)
+      did_decode_word_callback_(symbol_history);
     symbol_history.clear();
   }
 }
