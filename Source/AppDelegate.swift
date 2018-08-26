@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow(frame: UIScreen.main.bounds)
     let encoderVC = EncoderViewController()
     encoderVC.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 0)
-    let decoderVC = CameraPreviewController()
+    let decoderVC = DecoderViewController()
     decoderVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
     let tabBarController = UITabBarController()
     let controllers = [encoderVC, decoderVC]

@@ -8,6 +8,10 @@
 
 #include "MorseDecoder.h"
 
+MorseDecoder::MorseDecoder() {
+  this->reset();
+}
+
 void MorseDecoder::setSymbolDecodedCallback(std::function<void (const std::string&)> callback) {
   did_decode_symbol_callback_ = callback;
 }
@@ -34,6 +38,12 @@ void MorseDecoder::finishReading() {
     signal_history_.clear();
     symbol_history.clear();
   }
+}
+
+void MorseDecoder::reset() {
+  time_of_last_signal_end_ = std::chrono::high_resolution_clock::now();
+  last_signal_duration_ = std::chrono::seconds(20);
+  signal_history_.clear();
 }
 
 void MorseDecoder::signalEndDetected() {

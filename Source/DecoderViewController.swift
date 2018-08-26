@@ -1,5 +1,5 @@
 //
-//  CameraPreviewController.swift
+//  DecoderViewController.swift
 //  MorseRelay
 //
 //  Created by Nicolas Degen on 11.07.18.
@@ -9,7 +9,7 @@ import UIKit
 import AVFoundation
 import CoreImage
 
-class CameraPreviewController: UIViewController {
+class DecoderViewController: UIViewController {
   var textOutput: UITextField!
   
   // MARK: - Properties
@@ -27,6 +27,11 @@ class CameraPreviewController: UIViewController {
   let sampleBufferQueue = DispatchQueue.global(qos: .userInteractive)
   
   // MARK: - View Lifecycle
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    frameProcessor.reset()
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()

@@ -45,6 +45,10 @@
   };
 }
 
+- (void)reset {
+  _morseDecoder.reset();
+}
+
 - (void)captureOutput:(AVCaptureOutput *)output
 didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
        fromConnection:(AVCaptureConnection *)connection {
