@@ -10,7 +10,7 @@ import AVFoundation
 import CoreImage
 
 class DecoderViewController: UIViewController {
-  var textOutput: UITextField!
+  var textOutput: UILabel!
   
   // MARK: - Properties
   
@@ -152,7 +152,7 @@ class DecoderViewController: UIViewController {
   
   override func loadView() {
     super.loadView()
-    textOutput = UITextField(frame: .zero)
+    textOutput = UILabel(frame: .zero)
     let hudView = UIImageView(image: UIImage(named: "HUDImage"))
     hudView.contentMode = .center
     view.addSubview(hudView)
@@ -161,5 +161,24 @@ class DecoderViewController: UIViewController {
                                  hudView.widthAnchor.constraint(equalTo: view.widthAnchor),
                                  hudView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                                  hudView.centerYAnchor.constraint(equalTo: view.centerYAnchor)])
+    
+    let blur = UIBlurEffect(style: .light)
+    let blurView = UIVisualEffectView(effect: blur)
+    
+    textOutput = UILabel(frame: .zero)
+    blurView.frame = textOutput.bounds
+    textOutput.addSubview(blurView)
+    textOutput.sendSubview(toBack: blurView)
+    
+    textOutput.backgroundColor = .clear
+    textOutput.textColor = .white
+    
+    view.addSubview(textOutput)
+    blurView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([textOutput.bottomAnchor.constraint(equalTo: view.topAnchor, constant: -20),
+                                 textOutput.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
+                                 textOutput.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                                 textOutput.topAnchor.constraint(equalTo: view.topAnchor, constant: 20)])
+
   }
 }

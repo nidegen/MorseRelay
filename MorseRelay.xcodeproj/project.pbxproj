@@ -132,13 +132,13 @@
 			isa = PBXGroup;
 			children = (
 				37AE827320FDE5F400EE07F0 /* MorseEngine */,
-				37AE42BC20F64B2F007FF05F /* AppDelegate.swift */,
-				37AE42BE20F64B2F007FF05F /* DecoderViewController.swift */,
 				3788918520F7E356004D9073 /* FrameProcessor.h */,
 				3788918620F7E356004D9073 /* FrameProcessor.mm */,
 				37AE826D20F9FB4200EE07F0 /* FlashlightEncoder.h */,
 				37AE826E20F9FB4200EE07F0 /* FlashlightEncoder.mm */,
 				3788918420F7E356004D9073 /* MorseRelay-Bridging-Header.h */,
+				37AE42BC20F64B2F007FF05F /* AppDelegate.swift */,
+				37AE42BE20F64B2F007FF05F /* DecoderViewController.swift */,
 				37AE82852104D23A00EE07F0 /* EncoderViewController.swift */,
 			);
 			path = Source;

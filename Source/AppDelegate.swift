@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     tabBarController.viewControllers = controllers.map {
       UINavigationController(rootViewController: $0)
     }
+    tabBarController.tabBar.barStyle = .black
     
     window!.rootViewController = tabBarController
     window!.makeKeyAndVisible()
