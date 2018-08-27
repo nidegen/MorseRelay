@@ -120,7 +120,7 @@ class DecoderViewController: UIViewController {
       let preview = AVCaptureVideoPreviewLayer(session: captureSession)
       preview.frame = view.bounds
       preview.backgroundColor = UIColor.black.cgColor
-      preview.videoGravity = .resizeAspect
+      preview.videoGravity = .resizeAspectFill
       view.layer.insertSublayer(preview, at: 0)
       self.previewLayer = preview
       
@@ -152,7 +152,10 @@ class DecoderViewController: UIViewController {
   
   override func loadView() {
     super.loadView()
-    textOutput = UILabel(frame: .zero)
+    
+    let margins = view.layoutMarginsGuide
+    navigationController?.isNavigationBarHidden = true
+    
     let hudView = UIImageView(image: UIImage(named: "HUDImage"))
     hudView.contentMode = .center
     view.addSubview(hudView)
@@ -162,23 +165,30 @@ class DecoderViewController: UIViewController {
                                  hudView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                                  hudView.centerYAnchor.constraint(equalTo: view.centerYAnchor)])
     
-    let blur = UIBlurEffect(style: .light)
-    let blurView = UIVisualEffectView(effect: blur)
+    textOutput = UILabel(frame: .zero)
+
+    let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+    view.addSubview(blurView)
+    blurView.clipsToBounds = true
+    blurView.layer.cornerRadius = 5
+    
+    blurView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([blurView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -20),
+                                 blurView.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
+                                 blurView.widthAnchor.constraint(lessThanOrEqualToConstant: 300),
+                                 blurView.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.7)])
     
     textOutput = UILabel(frame: .zero)
-    blurView.frame = textOutput.bounds
-    textOutput.addSubview(blurView)
-    textOutput.sendSubview(toBack: blurView)
-    
     textOutput.backgroundColor = .clear
-    textOutput.textColor = .white
+    textOutput.textColor = .lightText
+    textOutput.textAlignment = .center
+    textOutput.font = UIFont.systemFont(ofSize: 24)
     
-    view.addSubview(textOutput)
-    blurView.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([textOutput.bottomAnchor.constraint(equalTo: view.topAnchor, constant: -20),
-                                 textOutput.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
-                                 textOutput.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                                 textOutput.topAnchor.constraint(equalTo: view.topAnchor, constant: 20)])
-
+    blurView.contentView.addSubview(textOutput)
+    textOutput.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([textOutput.heightAnchor.constraint(equalTo: blurView.heightAnchor),
+                                 textOutput.centerXAnchor.constraint(equalTo: blurView.centerXAnchor),
+                                 textOutput.centerYAnchor.constraint(equalTo: blurView.centerYAnchor),
+                                 textOutput.widthAnchor.constraint(equalTo: blurView.widthAnchor)])
   }
 }

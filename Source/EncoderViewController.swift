@@ -73,14 +73,3 @@ class EncoderViewController: UIViewController {
     view.endEditing(true)
   }
 }
-
-extension EncoderViewController: UITextViewDelegate {
-//  func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange,
-//                replacementText text: String) -> Bool {
-//    <#code#>
-//  }
-//  func textViewShouldReturn(_ textField: UITextField) -> Bool {
-//      textField.resignFirstResponder()
-//    return true
-//  }
-}
