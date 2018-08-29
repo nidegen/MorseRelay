@@ -11,6 +11,7 @@
 		376350D32116CF3F001E730D /* Background.svg in Resources */ = {isa = PBXBuildFile; fileRef = 376350D22116CF3F001E730D /* Background.svg */; };
 		3788918720F7E356004D9073 /* FrameProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3788918620F7E356004D9073 /* FrameProcessor.mm */; };
 		3788918820F7E4DD004D9073 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3788917F20F7DCD6004D9073 /* opencv2.framework */; };
+		378BC6772136F4CE00C5F0C5 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378BC6762136F4CE00C5F0C5 /* CameraManager.swift */; };
 		37AE42BD20F64B2F007FF05F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE42BC20F64B2F007FF05F /* AppDelegate.swift */; };
 		37AE42BF20F64B2F007FF05F /* DecoderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE42BE20F64B2F007FF05F /* DecoderViewController.swift */; };
 		37AE42C420F64B30007FF05F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37AE42C320F64B30007FF05F /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		3788918420F7E356004D9073 /* MorseRelay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MorseRelay-Bridging-Header.h"; sourceTree = "<group>"; };
 		3788918520F7E356004D9073 /* FrameProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrameProcessor.h; sourceTree = "<group>"; };
 		3788918620F7E356004D9073 /* FrameProcessor.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FrameProcessor.mm; sourceTree = "<group>"; };
+		378BC6762136F4CE00C5F0C5 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		37AE42B920F64B2F007FF05F /* MorseRelay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorseRelay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AE42BC20F64B2F007FF05F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37AE42BE20F64B2F007FF05F /* DecoderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				37AE42BC20F64B2F007FF05F /* AppDelegate.swift */,
 				37AE42BE20F64B2F007FF05F /* DecoderViewController.swift */,
 				37AE82852104D23A00EE07F0 /* EncoderViewController.swift */,
+				378BC6762136F4CE00C5F0C5 /* CameraManager.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				37AE42BD20F64B2F007FF05F /* AppDelegate.swift in Sources */,
 				37AE827220FB8D9200EE07F0 /* FlashTracker.cc in Sources */,
 				37AE826920F8B1B800EE07F0 /* MorseMapper.cc in Sources */,
+				378BC6772136F4CE00C5F0C5 /* CameraManager.swift in Sources */,
 				37AE826620F8B19C00EE07F0 /* MorseDecoder.cc in Sources */,
 				3788918720F7E356004D9073 /* FrameProcessor.mm in Sources */,
 				37AE826C20F8D21300EE07F0 /* MorseEncoder.cc in Sources */,
