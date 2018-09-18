@@ -28,7 +28,8 @@ MorseEncoder::MorseEncoder(std::function<void (bool)> callback) {
 }
 
 void MorseEncoder::clear() {
-  
+  std::queue<std::function<void(void)>> empty;
+  std::swap(dispatch_queue_, empty);
 }
 
 void MorseEncoder::terminate() {

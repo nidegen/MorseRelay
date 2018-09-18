@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface FlashlightEncoder : NSObject
-// TODO: Deprecated callback and handle torch in here
 -(id) init;
 -(void) emitMorseWord: (NSString*) word;
 -(void) emitMorseMessage: (NSString*) message;
+-(void) cancelMorseEmission;
 @end

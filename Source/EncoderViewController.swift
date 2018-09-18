@@ -32,7 +32,7 @@ class EncoderViewController: UIViewController {
   }
   
   @objc func cancelMorsing(_ sender: UIButton?) {
-    // TODO: cancel morsing
+    flashlightEncoder?.cancelMorseEmission()
     sender?.backgroundColor = .green
     morseButton.setTitle("Morse", for: .normal)
     sender?.removeTarget(nil, action: nil, for: .allEvents)
