@@ -12,12 +12,7 @@ MorseEncoder::MorseEncoder(std::function<void (bool)> callback) {
   light_source_switch_callback_ = callback;
   thread_ = std::thread([this]() {
     do {
-      //Wait until we have data or a quit signal
-      //      cv_.wait([this] {
-      //        return (dispatch_queue_.size() || quit_);
-      //      });
-      
-      //after wait, we own the lock
+//      std::unique_lock<std::mutex> lock(queue_lock_);
       if(dispatch_queue_.size() && !quit_) {
         auto task = std::move(dispatch_queue_.front());
         dispatch_queue_.pop();
@@ -33,9 +28,7 @@ void MorseEncoder::clear() {
 }
 
 void MorseEncoder::terminate() {
-  callOnEncoderThread([this]() {
-    quit_ = true;
-  });
+  quit_ = true;
 }
 
 MorseEncoder::~MorseEncoder() {

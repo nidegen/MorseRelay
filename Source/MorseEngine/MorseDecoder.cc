@@ -20,6 +20,10 @@ void MorseDecoder::setWordDecodedCallback(std::function<void (const std::string&
   did_decode_word_callback_ = callback;
 }
 
+void MorseDecoder::setCleanMessageCallback(std::function<void ()> callback) {
+  
+}
+
 void MorseDecoder::finishReading() {
   time_of_last_signal_start_ = std::chrono::high_resolution_clock::now();
   last_pause_duration_ = time_of_last_signal_start_ - time_of_last_signal_end_;
@@ -59,15 +63,21 @@ void MorseDecoder::signalEndDetected() {
 void MorseDecoder::signalStartDetected() {
   time_of_last_signal_start_ = std::chrono::high_resolution_clock::now();
   last_pause_duration_ = time_of_last_signal_start_ - time_of_last_signal_end_;
+  if (signal_history_.empty()) {
+    return;
+  }
   if (last_pause_duration_.count() < kIntervalDuration * 1.2) {
     //continue, still parsing glyph
-  } else if (last_pause_duration_.count() < kCharSeparationDuration * 1.2) {
+    return;
+  }
+  if (last_pause_duration_.count() < kCharSeparationDuration * 1.2) {
     std::string symbol = MorseMapper::getSymbol(signal_history_);
     symbol_history.append(symbol);
     signal_history_.clear();
     if (did_decode_symbol_callback_)
       did_decode_symbol_callback_(symbol);
-  } else if (last_pause_duration_.count() < kWordSeparationDuration * 1.2) {
+  }
+  if (last_pause_duration_.count() < kWordSeparationDuration * 1.2) {
     std::string symbol = MorseMapper::getSymbol(signal_history_);
     symbol_history.append(symbol);
     signal_history_.clear();

@@ -10,9 +10,14 @@ import AVFoundation
 import CoreImage
 
 class DecoderViewController: UIViewController {
-  var textOutput: UILabel!
   
-  // MARK: - Properties
+  // MARK: - UI Properties
+  var textOutput: UILabel!
+  var resetOutputButton: UIButton!
+  
+  var decoderDebugSignal: UIView?
+  
+  // MARK: - Camera/Processing Properties
   
   lazy var captureSession: AVCaptureSession = {
     let session = AVCaptureSession()
@@ -21,68 +26,8 @@ class DecoderViewController: UIViewController {
   }()
   
   let frameProcessor = FrameProcessor()
-  
   var previewLayer: AVCaptureVideoPreviewLayer?
-  
   let sampleBufferQueue = DispatchQueue.global(qos: .userInteractive)
-  
-  // MARK: - View Lifecycle
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    frameProcessor.reset()
-  }
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    frameProcessor.setWordDetectedCallback { word in
-      DispatchQueue.main.async {
-        self.navigationItem.title = word
-        self.textOutput.text = (self.textOutput.text ?? "") + "" + word!
-      }
-    }
-    
-    frameProcessor.setSymbolDetectedCallback { symbol in
-      DispatchQueue.main.async {
-        self.navigationItem.title = symbol
-        self.textOutput.text = (self.textOutput.text ?? "") + symbol!
-      }
-    }
-    
-//    frameProcessor.setSignalDetectionEventCallback { detectedSignal in
-//      DispatchQueue.main.async {
-//        if detectedSignal {
-//          // Detected signal switch on
-//          self.navigationItem.title = "Signal!"
-//        } else {
-//          // Detected signal switch off
-//          self.navigationItem.title = "No"
-//        }
-//      }
-//    }
-  }
-  
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    
-    if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
-      setupCaptureSession()
-    } else {
-      AVCaptureDevice.requestAccess(for: .video, completionHandler: { (authorized) in
-        DispatchQueue.main.async {
-          if authorized {
-            self.setupCaptureSession()
-          }
-        }
-      })
-    }
-  }
-  
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
-    previewLayer?.bounds = view.frame
-  }
   
   // MARK: - Rotation
   
@@ -150,6 +95,69 @@ class DecoderViewController: UIViewController {
     }
   }
   
+  // MARK: - View Lifecycle
+  
+  @objc func clearOutput() {
+    textOutput.text = ""
+  }
+  
+  // MARK: - View Lifecycle
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    frameProcessor.reset()
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    frameProcessor.setWordDetectedCallback { word in
+      DispatchQueue.main.async {
+        self.navigationItem.title = word
+        self.textOutput.text = (self.textOutput.text ?? "") + " "// + word!
+      }
+    }
+    
+    frameProcessor.setSymbolDetectedCallback { symbol in
+      DispatchQueue.main.async {
+        self.navigationItem.title = symbol
+        self.textOutput.text = (self.textOutput.text ?? "") + symbol!
+      }
+    }
+    
+    frameProcessor.setSignalDetectionEventCallback { detectedSignal in
+      DispatchQueue.main.async {
+        if detectedSignal {
+          self.decoderDebugSignal?.backgroundColor = .yellow
+        } else {
+          // Detected signal switch off
+          self.decoderDebugSignal?.backgroundColor = .clear
+        }
+      }
+    }
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
+      setupCaptureSession()
+    } else {
+      AVCaptureDevice.requestAccess(for: .video, completionHandler: { (authorized) in
+        DispatchQueue.main.async {
+          if authorized {
+            self.setupCaptureSession()
+          }
+        }
+      })
+    }
+  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    previewLayer?.bounds = view.frame
+  }
+  
   override func loadView() {
     super.loadView()
     
@@ -166,17 +174,16 @@ class DecoderViewController: UIViewController {
                                  hudView.centerYAnchor.constraint(equalTo: view.centerYAnchor)])
     
     textOutput = UILabel(frame: .zero)
-
+    
     let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
     view.addSubview(blurView)
     blurView.clipsToBounds = true
     blurView.layer.cornerRadius = 5
     
     blurView.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([blurView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -20),
-                                 blurView.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-                                 blurView.widthAnchor.constraint(lessThanOrEqualToConstant: 300),
-                                 blurView.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.7)])
+    blurView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -20).isActive = true
+    blurView.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
+    blurView.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.9).isActive = true
     
     textOutput = UILabel(frame: .zero)
     textOutput.backgroundColor = .clear
@@ -186,9 +193,36 @@ class DecoderViewController: UIViewController {
     
     blurView.contentView.addSubview(textOutput)
     textOutput.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([textOutput.heightAnchor.constraint(equalTo: blurView.heightAnchor),
-                                 textOutput.centerXAnchor.constraint(equalTo: blurView.centerXAnchor),
-                                 textOutput.centerYAnchor.constraint(equalTo: blurView.centerYAnchor),
-                                 textOutput.widthAnchor.constraint(equalTo: blurView.widthAnchor)])
+    textOutput.heightAnchor.constraint(equalTo: blurView.heightAnchor).isActive = true
+    textOutput.centerYAnchor.constraint(equalTo: blurView.centerYAnchor).isActive = true
+    textOutput.leftAnchor.constraint(equalTo: blurView.leftAnchor).isActive = true
+    
+    resetOutputButton = UIButton(frame: .zero)
+    resetOutputButton.backgroundColor = .clear
+    resetOutputButton.setTitle("Clear", for: .normal)
+    resetOutputButton.addTarget(self, action: #selector(clearOutput), for: .touchDown)
+    blurView.contentView.addSubview(resetOutputButton)
+    resetOutputButton.translatesAutoresizingMaskIntoConstraints = false
+    resetOutputButton.heightAnchor.constraint(equalTo: blurView.heightAnchor).isActive = true
+    resetOutputButton.centerYAnchor.constraint(equalTo: blurView.centerYAnchor).isActive = true
+    resetOutputButton.leftAnchor.constraint(equalTo: textOutput.rightAnchor).isActive = true
+    resetOutputButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
+    resetOutputButton.rightAnchor.constraint(equalTo: blurView.rightAnchor).isActive = true
+    
+    #if DEBUG
+    let decoderDebugSignal = UIView(frame: .zero)
+    view.addSubview(decoderDebugSignal)
+    self.decoderDebugSignal = decoderDebugSignal
+    decoderDebugSignal.backgroundColor = .clear
+    decoderDebugSignal.translatesAutoresizingMaskIntoConstraints = false
+    decoderDebugSignal.rightAnchor.constraint(equalTo: margins.rightAnchor, constant: -30).isActive = true
+    decoderDebugSignal.topAnchor.constraint(equalTo: margins.topAnchor, constant: 30).isActive = true
+    decoderDebugSignal.widthAnchor.constraint(equalToConstant: 20).isActive = true
+    decoderDebugSignal.heightAnchor.constraint(equalToConstant: 20).isActive = true
+    decoderDebugSignal.layer.cornerRadius = 5
+    decoderDebugSignal.layer.borderColor = UIColor.black.cgColor
+    decoderDebugSignal.layer.borderWidth = 3
+    decoderDebugSignal.layer.masksToBounds = true
+    #endif
   }
 }

@@ -23,6 +23,7 @@ class MorseDecoder {
   
   void setSymbolDecodedCallback(std::function<void (const std::string&)> callback);
   void setWordDecodedCallback(std::function<void (const std::string&)> callback);
+  void setCleanMessageCallback(std::function<void ()> callback);
   
   void finishReading();
   
