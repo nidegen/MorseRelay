@@ -10,7 +10,6 @@ import AVFoundation
 import CoreImage
 
 class CameraManager {
-  
   // MARK: - Properties
   
   lazy var captureSession: AVCaptureSession = {
@@ -19,9 +18,12 @@ class CameraManager {
     return session
   }()
   
-  let frameProcessor = FrameProcessor()
-  var previewLayer: AVCaptureVideoPreviewLayer?
   let sampleBufferQueue = DispatchQueue.global(qos: .userInteractive)
+  let captureDelegate: AVCaptureVideoDataOutputSampleBufferDelegate!
+  
+  init(captureDelegate: AVCaptureVideoDataOutputSampleBufferDelegate) {
+    self.captureDelegate = captureDelegate
+  }
   
   func setupCamera() {
     if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
@@ -45,7 +47,7 @@ class CameraManager {
     return discovery.devices.first
   }
   
-  private func setupCaptureSession() {
+  func setupCaptureSession() {
     guard captureSession.inputs.isEmpty else { return }
     guard let camera = findCamera() else {
       print("No camera found")
@@ -56,11 +58,9 @@ class CameraManager {
       let cameraInput = try AVCaptureDeviceInput(device: camera)
       captureSession.addInput(cameraInput)
       
-      previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-      
       let output = AVCaptureVideoDataOutput()
       output.alwaysDiscardsLateVideoFrames = true
-      output.setSampleBufferDelegate(frameProcessor, queue: sampleBufferQueue)
+      output.setSampleBufferDelegate(captureDelegate, queue: sampleBufferQueue)
       
       for pixelType in output.availableVideoPixelFormatTypes {
         if pixelType == kCVPixelFormatType_32BGRA {
