@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DecoderViewController.swift
 //  MorseRelayDebugger
 //
 //  Created by Nicolas Degen on 11.10.18.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class DecoderViewController: NSViewController {
   let frameProcessor = FrameProcessor()
   let cameraManager: CameraManager!
   
@@ -45,11 +45,11 @@ class ViewController: NSViewController {
         if detectedSignal {
           // Detected signal switch on
           self.textOutput.backgroundColor = .yellow
-          print(11)
+          print("On")
         } else {
           // Detected signal switch off
           self.textOutput.backgroundColor = .clear
-          print(00)
+          print("Off")
         }
       }
     }

@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="MorseRelayDebugger" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -693,25 +694,64 @@
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="G1i-5W-h41" kind="relationship" relationship="window.shadowedContentViewController" id="o9j-Ix-nff"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <!--Tab View Controller-->
+        <scene sceneID="8k8-Be-1Om">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <tabViewController selectedTabViewItemIndex="1" id="G1i-5W-h41" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem identifier="" id="d4j-FC-BJ4"/>
+                        <tabViewItem identifier="" id="Djy-11-aTe"/>
+                    </tabViewItems>
+                    <tabView key="tabView" type="noTabsNoBorder" id="1mG-k9-eNy">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <connections>
+                            <outlet property="delegate" destination="G1i-5W-h41" id="sql-ev-jI2"/>
+                        </connections>
+                    </tabView>
+                    <connections>
+                        <outlet property="tabView" destination="1mG-k9-eNy" id="jV3-sh-LAR"/>
+                        <segue destination="k6T-Yw-IgX" kind="relationship" relationship="tabItems" id="VZb-Yk-28Y"/>
+                        <segue destination="rBd-uq-j9w" kind="relationship" relationship="tabItems" id="YLI-0f-feQ"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="Nth-RE-FLr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="74" y="750"/>
+        </scene>
+        <!--Decoder View Controller-->
+        <scene sceneID="Ay9-NP-cHm">
+            <objects>
+                <viewController id="k6T-Yw-IgX" customClass="DecoderViewController" customModule="MorseRelayDebugger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="gEk-1f-dUa">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="Scm-24-KeX" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="650" y="591"/>
+        </scene>
+        <!--Encoder View Controller-->
+        <scene sceneID="XY6-U2-jnD">
+            <objects>
+                <viewController id="rBd-uq-j9w" customClass="EncoderViewController" customModule="MorseRelayDebugger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="kJZ-7e-ZXX">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="ZsV-AC-17o" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="650" y="964"/>
         </scene>
     </scenes>
 </document>
