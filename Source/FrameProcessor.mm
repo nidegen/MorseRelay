@@ -13,7 +13,7 @@
 #import <opencv2/core/core.hpp>
 #import <opencv2/highgui/highgui.hpp>
 #import <opencv2/imgproc/imgproc.hpp>
-#import <opencv2/imgcodecs/ios.h>
+//#import <opencv2/imgcodecs/ios.h>
 
 #include "FlashTracker.h"
 
@@ -78,7 +78,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
   cv::Mat frame_image_rgb;
   cv::cvtColor(crop, frame_image_rgb, CV_BGR2GRAY); // this makes a COPY of the data!
   
-  UIImage* image_rgb = MatToUIImage(frame_image_rgb);
+//  UIImage* image_rgb = MatToUIImage(frame_image_rgb);
   float luminanceDelta = FlashTracker::processFrame(frame_image_rgb);
   if (!_previousFrameHadFlash && luminanceDelta > 1.3) {
     _morseDecoder.signalStartDetected();
