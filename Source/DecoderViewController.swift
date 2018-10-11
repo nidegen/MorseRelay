@@ -68,17 +68,7 @@ class DecoderViewController: UIViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
-    if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
-      cameraManager.setupCaptureSession()
-    } else {
-      AVCaptureDevice.requestAccess(for: .video, completionHandler: { (authorized) in
-        DispatchQueue.main.async {
-          if authorized {
-            self.cameraManager.setupCaptureSession()
-          }
-        }
-      })
-    }
+    cameraManager.setupCamera()
     
     let previewLayer = AVCaptureVideoPreviewLayer(session: cameraManager.captureSession)
     previewLayer.frame = view.bounds

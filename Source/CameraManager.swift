@@ -42,9 +42,15 @@ class CameraManager {
   // MARK: - Camera Capture
   
   private func findCamera() -> AVCaptureDevice? {
+    #if os(iOS)
     let deviceTypes: [AVCaptureDevice.DeviceType] = [.builtInDualCamera, .builtInTelephotoCamera, .builtInWideAngleCamera]
     let discovery = AVCaptureDevice.DiscoverySession(deviceTypes: deviceTypes, mediaType: .video, position: .back)
     return discovery.devices.first
+    #elseif os(macOS)
+    return AVCaptureDevice.default(for: .video)
+    #else
+    print("OMG, it's that mythical new Apple product!!!")
+    #endif
   }
   
   func setupCaptureSession() {
