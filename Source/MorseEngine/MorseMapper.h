@@ -47,7 +47,7 @@ class MorseMapper {
         std:: cout << glyph_element;
       }
       std::cout << ". Ignoring..." << std::endl;
-      return "{}";
+      return "";
     }
     return kGlyphToSymbol.at(glyph);
   }

@@ -60,4 +60,7 @@
   _morseEncoder->morseMessage(cppWord);
 }
 
+-(void) cancelMorseEmission {
+  _morseEncoder->clear();
+}
 @end
