@@ -11,6 +11,7 @@ import Cocoa
 class DecoderViewController: NSViewController {
   let frameProcessor = FrameProcessor()
   let cameraManager: CameraManager!
+  var previewLayer: AVCaptureVideoPreviewLayer?
   
   let textOutput = NSTextView(frame: .zero)
   
@@ -55,12 +56,27 @@ class DecoderViewController: NSViewController {
     }
     
     cameraManager.setupCamera()
+  }
+  
+  override func viewDidAppear() {
+    if (previewLayer == nil) {
+      previewLayer = AVCaptureVideoPreviewLayer(session: cameraManager.captureSession)
+      previewLayer!.frame = view.bounds
+      previewLayer!.backgroundColor = NSColor.black.cgColor
+      previewLayer!.videoGravity = .resizeAspectFill
+      view.layer?.insertSublayer(previewLayer!, at: 0)
+    }
+    cameraManager.startCamera()
+  }
+  
+  override func viewDidLayout() {
+    super.viewDidLayout()
     
-    let previewLayer = AVCaptureVideoPreviewLayer(session: cameraManager.captureSession)
-    previewLayer.frame = view.bounds
-    previewLayer.backgroundColor = NSColor.black.cgColor
-    previewLayer.videoGravity = .resizeAspectFill
-    view.layer?.insertSublayer(previewLayer, at: 0)
+    previewLayer?.frame = view.bounds;
+  }
+  
+  override func viewWillDisappear() {
+    cameraManager.stopCamera()
   }
   
   override func loadView() {
