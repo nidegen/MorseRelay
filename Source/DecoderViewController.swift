@@ -12,7 +12,7 @@ import CoreImage
 class DecoderViewController: UIViewController {
   
   // MARK: - UI Properties
-  var textOutput: UILabel!
+  var textOutput = UITextView(frame: .zero)
   var resetOutputButton: UIButton!
   
   var decoderDebugSignal: UIView?
@@ -21,6 +21,9 @@ class DecoderViewController: UIViewController {
   var previewLayer: AVCaptureVideoPreviewLayer?
   
   var cameraManager: CameraManager!
+  
+  var currentText = ""
+  var currentWord = ""
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     cameraManager = CameraManager(captureDelegate: frameProcessor)
@@ -44,29 +47,40 @@ class DecoderViewController: UIViewController {
     
     frameProcessor.setWordDetectedCallback { word in
       DispatchQueue.main.async {
-        self.navigationItem.title = word
-        self.textOutput.text = (self.textOutput.text ?? "") + "" + word!
+        
+        self.currentText += " " + (word ?? "")
+        self.currentWord = ""
+        self.textOutput.text = self.currentText
       }
     }
     
     frameProcessor.setSymbolDetectedCallback { symbol in
       DispatchQueue.main.async {
-        self.navigationItem.title = symbol
-        self.textOutput.text = (self.textOutput.text ?? "") + symbol!
+        self.currentWord += symbol ?? ""
+        self.textOutput.text = self.currentText + " " + self.currentWord
       }
     }
     
-//    frameProcessor.setSignalDetectionEventCallback { detectedSignal in
-//      DispatchQueue.main.async {
-//        if detectedSignal {
-//          // Detected signal switch on
-//          self.navigationItem.title = "Signal!"
-//        } else {
-//          // Detected signal switch off
-//          self.navigationItem.title = "No"
-//        }
-//      }
-//    }
+    frameProcessor.setSignalDetectionEventCallback { detectedSignal in
+      DispatchQueue.main.async {
+        if detectedSignal {
+          // Detected signal switch on
+          // self.navigationItem.title = "Signal!"
+          self.decoderDebugSignal?.backgroundColor = .red
+        } else {
+          // Detected signal switch off
+          // self.navigationItem.title = "No"
+          self.decoderDebugSignal?.backgroundColor = .clear
+        }
+      }
+    }
+  }
+  
+  @objc func clearOutput(_ sender: Any?) {
+    frameProcessor.reset()
+    textOutput.text = ""
+    currentText = ""
+    currentWord = ""
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -107,8 +121,6 @@ class DecoderViewController: UIViewController {
                                  hudView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                                  hudView.centerYAnchor.constraint(equalTo: view.centerYAnchor)])
     
-    textOutput = UILabel(frame: .zero)
-    
     let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
     view.addSubview(blurView)
     blurView.clipsToBounds = true
@@ -118,12 +130,14 @@ class DecoderViewController: UIViewController {
     blurView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -20).isActive = true
     blurView.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
     blurView.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.9).isActive = true
+    blurView.heightAnchor.constraint(equalToConstant: 150).isActive = true
     
-    textOutput = UILabel(frame: .zero)
     textOutput.backgroundColor = .clear
     textOutput.textColor = .lightText
-    textOutput.textAlignment = .center
-    textOutput.font = UIFont.systemFont(ofSize: 24)
+    textOutput.textAlignment = .justified
+    textOutput.font = UIFont.systemFont(ofSize: 18)
+    textOutput.isEditable = false
+    textOutput.isScrollEnabled = true
     
     blurView.contentView.addSubview(textOutput)
     textOutput.translatesAutoresizingMaskIntoConstraints = false

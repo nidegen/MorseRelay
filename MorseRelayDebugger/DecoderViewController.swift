@@ -32,12 +32,14 @@ class DecoderViewController: NSViewController {
     frameProcessor.setWordDetectedCallback { word in
       DispatchQueue.main.async {
         self.textOutput.string = self.textOutput.string + "" + word!
+        print(word!)
       }
     }
     
     frameProcessor.setSymbolDetectedCallback { symbol in
       DispatchQueue.main.async {
         self.textOutput.string = self.textOutput.string + symbol!
+        print(symbol!)
       }
     }
     
@@ -46,11 +48,11 @@ class DecoderViewController: NSViewController {
         if detectedSignal {
           // Detected signal switch on
           self.textOutput.backgroundColor = .yellow
-          print("On")
+//          print("On")
         } else {
           // Detected signal switch off
           self.textOutput.backgroundColor = .clear
-          print("Off")
+//          print("Off")
         }
       }
     }
@@ -85,9 +87,19 @@ class DecoderViewController: NSViewController {
     textOutput.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(textOutput)
     textOutput.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-    textOutput.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+    textOutput.bottomAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
     textOutput.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
     textOutput.heightAnchor.constraint(equalToConstant: 40).isActive = true
+    textOutput.backgroundColor = .white
+    
+    let hudView = NSImageView(image: NSImage(named: "HUDImage")!)
+    hudView.imageAlignment = .alignCenter
+    view.addSubview(hudView)
+    hudView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([hudView.heightAnchor.constraint(equalTo: view.heightAnchor),
+                                 hudView.widthAnchor.constraint(equalTo: view.widthAnchor),
+                                 hudView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                                 hudView.centerYAnchor.constraint(equalTo: view.centerYAnchor)])
   }
 }
 
