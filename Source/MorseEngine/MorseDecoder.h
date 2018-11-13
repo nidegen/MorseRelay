@@ -29,7 +29,7 @@ class MorseDecoder {
   
   void signalEndDetected();
   void signalStartDetected();
-  
+    
  private:
   std::vector<bool> signal_history_;
   std::string symbol_history;

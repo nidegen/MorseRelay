@@ -25,15 +25,15 @@ class MorseEncoder {
   MorseEncoder(std::function<void (bool)> callback);
   ~MorseEncoder();
   void terminate();
-  void callOnEncoderThread(std::function<void()> callback);
-  void morseCharacter(const std::string& character);
-  void morseWord(const std::string& word);
-  void morseMessage(const std::string& message);
-  void morseWordSeparator();
+  void pushToEncoderQueue(std::function<void()> callback);
+  void enqueueWordSeparator();
   void clear();
   
+  void enqueueCharacter(const std::string& character);
+  void enqueueWord(const std::string& word);
+  void enqueueMessage(std::string message);
+
  private:
-  
   std::thread thread_;
   bool quit_ = false;
   std::queue<std::function<void(void)>> dispatch_queue_;
@@ -41,9 +41,6 @@ class MorseEncoder {
   std::mutex queue_lock_;
   
   void waitSeconds(float duration);
-  void morseCharacterSynchronous(const std::string& character);
-  void morseWordSynchronous(const std::string& word);
-  void morseMessageSynchronous(std::string message);
 };
 
 #endif // MORSE_ENCODER_H_

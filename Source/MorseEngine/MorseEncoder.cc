@@ -37,30 +37,56 @@ MorseEncoder::~MorseEncoder() {
   }
 }
 
-void MorseEncoder::callOnEncoderThread(std::function<void()> callback) {
+void MorseEncoder::pushToEncoderQueue(std::function<void()> callback) {
   dispatch_queue_.push(callback);
 }
 
-void MorseEncoder::morseCharacter(const std::string& character) {
-  callOnEncoderThread([this, character]() {
-    morseCharacterSynchronous(character);
+void MorseEncoder::enqueueCharacter(const std::string& character) {
+  MorseGlyph glyph = MorseMapper::getGlyph(character);
+  for(bool morse_symbol : glyph) {
+    pushToEncoderQueue([this, morse_symbol]() {
+      light_source_switch_callback_(true);
+      if (morse_symbol == kDitSymbol) {
+        waitSeconds(kDitDuration);
+      } else {
+        waitSeconds(kDahDuration);
+      }
+      light_source_switch_callback_(false);
+      waitSeconds(kIntervalDuration);
+    });
+  }
+  pushToEncoderQueue([this]() {
+    waitSeconds(kCharSeparationDuration - kIntervalDuration);
   });
 }
 
-void MorseEncoder::morseWord(const std::string& word) {
-  callOnEncoderThread([this, word]() {
-    morseWordSynchronous(word);
+void MorseEncoder::enqueueWord(const std::string& word) {
+  for(const char& c_character : word) {
+    std::string character(1, (&c_character)[0]);
+    enqueueCharacter(character);
+  }
+  pushToEncoderQueue([this]() {
+    waitSeconds(kWordSeparationDuration - kCharSeparationDuration);
   });
 }
 
-void MorseEncoder::morseMessage(const std::string& message) {
-  callOnEncoderThread([this, message]() {
-    morseMessageSynchronous(message);
+void MorseEncoder::enqueueMessage(std::string message) {
+  size_t pos = 0;
+  std::string word;
+  while ((pos = message.find(' ')) != std::string::npos) {
+    word = message.substr(0, pos);
+    enqueueWord(word);
+    message.erase(0, pos + 1);
+  }
+  enqueueWord(message);
+  
+  pushToEncoderQueue([this]() {
+    waitSeconds(kWordSeparationDuration * 2);
   });
 }
 
-void MorseEncoder::morseWordSeparator() {
-  callOnEncoderThread([this]() {
+void MorseEncoder::enqueueWordSeparator() {
+  pushToEncoderQueue([this]() {
     waitSeconds(kWordSeparationDuration);
   });
 }
@@ -68,40 +94,4 @@ void MorseEncoder::morseWordSeparator() {
 void MorseEncoder::waitSeconds(float duration) {
   std::chrono::microseconds sec(long(duration * 1000000));
   std::this_thread::sleep_for(sec);
-}
-
-void MorseEncoder::morseCharacterSynchronous(const std::string& character) {
-  MorseGlyph glyph = MorseMapper::getGlyph(character);
-  for(bool morse_symbol : glyph) {
-    light_source_switch_callback_(true);
-    if (morse_symbol == kDitSymbol) {
-      waitSeconds(kDitDuration);
-    } else {
-      waitSeconds(kDahDuration);
-    }
-    light_source_switch_callback_(false);
-    waitSeconds(kIntervalDuration);
-  }
-  waitSeconds(kCharSeparationDuration - kIntervalDuration);
-}
-
-void MorseEncoder::morseWordSynchronous(const std::string& word) {
-  std::cout << std::endl << "Morsing word: " << word << std::endl;
-  for(const char& c_character : word) {
-    std::string character(1, (&c_character)[0]);
-    morseCharacterSynchronous(character);
-  }
-  waitSeconds(kWordSeparationDuration - kCharSeparationDuration);
-}
-
-void MorseEncoder::morseMessageSynchronous(std::string message) {
-  size_t pos = 0;
-  std::string word;
-  while ((pos = message.find(' ')) != std::string::npos) {
-    word = message.substr(0, pos);
-    morseWordSynchronous(word);
-    message.erase(0, pos + 1);
-  }
-  morseWordSynchronous(message);
-  waitSeconds(kWordSeparationDuration *2);
 }

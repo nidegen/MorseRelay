@@ -53,10 +53,14 @@ void MorseDecoder::reset() {
 void MorseDecoder::signalEndDetected() {
   time_of_last_signal_end_ = std::chrono::high_resolution_clock::now();
   last_signal_duration_ = time_of_last_signal_end_ - time_of_last_signal_start_;
-  if (last_signal_duration_.count() > kDahDuration * 0.9) {
+  if (last_signal_duration_.count() > kDahDuration * 0.8) {
     signal_history_.push_back(kDahSymbol);
-  } else {
+  } else if (last_signal_duration_.count() > kDitDuration * 0.5 &&
+             last_signal_duration_.count() < kDahDuration * 0.5) {
     signal_history_.push_back(kDitSymbol);
+  } else {
+    std::cout << "Signal end detected without registering" << std::endl;
+    std::cout << "  Duration: " << last_signal_duration_.count()/kDitDuration << " Dits, " << last_signal_duration_.count()/kDahSymbol << " Dahs" << std::endl;
   }
 }
 
@@ -65,19 +69,16 @@ void MorseDecoder::signalStartDetected() {
   last_pause_duration_ = time_of_last_signal_start_ - time_of_last_signal_end_;
   if (signal_history_.empty()) {
     return;
-  }
-  if (last_pause_duration_.count() < kIntervalDuration * 1.2) {
+  } else if (last_pause_duration_.count() < (kIntervalDuration + kCharSeparationDuration)/2) {
     //continue, still parsing glyph
     return;
-  }
-  if (last_pause_duration_.count() < kCharSeparationDuration * 1.2) {
+  } else if (last_pause_duration_.count() < (kCharSeparationDuration + kWordSeparationDuration)/2) {
     std::string symbol = MorseMapper::getSymbol(signal_history_);
     symbol_history.append(symbol);
     signal_history_.clear();
     if (did_decode_symbol_callback_)
       did_decode_symbol_callback_(symbol);
-  }
-  if (last_pause_duration_.count() < kWordSeparationDuration * 1.2) {
+  } else if (last_pause_duration_.count() > (kCharSeparationDuration + kWordSeparationDuration)/2) {
     std::string symbol = MorseMapper::getSymbol(signal_history_);
     symbol_history.append(symbol);
     signal_history_.clear();
