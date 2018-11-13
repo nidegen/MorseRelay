@@ -20,8 +20,10 @@
 @interface FrameProcessor() {
   std::function<void(bool)> _signalChangedCallback;
 }
+
 @property MorseDecoder morseDecoder;
 @property bool previousFrameHadFlash;
+
 @end
 
 @implementation FrameProcessor
@@ -93,4 +95,15 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
   }
   CVPixelBufferUnlockBaseAddress(pixelBuffer, kCVPixelBufferLock_ReadOnly);
 }
+
+- (CGRect)getROIForFrame: (CGSize) frame {
+  CGRect roi;
+  static constexpr int kSampleSize = 80;
+  roi.origin.x = (frame.width - kSampleSize)/2;
+  roi.origin.y = (frame.height - kSampleSize)/2;
+  roi.size.width = kSampleSize;
+  roi.size.height = kSampleSize;
+  return roi;
+}
+
 @end
