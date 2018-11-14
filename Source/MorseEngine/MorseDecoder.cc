@@ -55,9 +55,11 @@ void MorseDecoder::signalEndDetected() {
   last_signal_duration_ = time_of_last_signal_end_ - time_of_last_signal_start_;
   if (last_signal_duration_.count() > kDahDuration * 0.8) {
     signal_history_.push_back(kDahSymbol);
+    dah_durations_log_.push_back(last_signal_duration_.count()/kDahDuration);
   } else if (last_signal_duration_.count() > kDitDuration * 0.5 &&
              last_signal_duration_.count() < kDahDuration * 0.5) {
     signal_history_.push_back(kDitSymbol);
+    dit_durations_log_.push_back(last_signal_duration_.count()/kDitDuration);
   } else {
     std::cout << "Signal end detected without registering" << std::endl;
     std::cout << "  Duration: " << last_signal_duration_.count()/kDitDuration << " Dits, " << last_signal_duration_.count()/kDahSymbol << " Dahs" << std::endl;

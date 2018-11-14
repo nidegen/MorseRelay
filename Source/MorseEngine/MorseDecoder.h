@@ -42,6 +42,9 @@ class MorseDecoder {
   
   std::function<void (const std::string&)> did_decode_symbol_callback_;
   std::function<void (const std::string&)> did_decode_word_callback_;
+  
+  std::vector<float> dit_durations_log_;
+  std::vector<float> dah_durations_log_;
 };
 
 #endif // MORSE_DECODER_H_
