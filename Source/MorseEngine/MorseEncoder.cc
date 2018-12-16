@@ -43,31 +43,56 @@ void MorseEncoder::pushToEncoderQueue(std::function<void()> callback) {
 
 void MorseEncoder::enqueueCharacter(const std::string& character) {
   MorseGlyph glyph = MorseMapper::getGlyph(character);
-  for(bool morse_symbol : glyph) {
-    pushToEncoderQueue([this, morse_symbol]() {
-      light_source_switch_callback_(true);
-      if (morse_symbol == kDitSymbol) {
+
+  for (int i = 0; i < glyph.size() - 1; ++i) {
+    if (glyph[i] == kDitSymbol) {
+      pushToEncoderQueue([this]() {
+        light_source_switch_callback_(true);
         waitSeconds(kDitDuration);
-      } else {
+        light_source_switch_callback_(false);
+        waitSeconds(kIntervalDuration);
+      });
+    } else {
+      pushToEncoderQueue([this]() {
+        light_source_switch_callback_(true);
         waitSeconds(kDahDuration);
-      }
+        light_source_switch_callback_(false);
+        waitSeconds(kIntervalDuration);
+      });
+    }
+  }
+  
+  // For last glyph signal, do not append signal interval waiting time
+  if (glyph.back() == kDitSymbol) {
+    pushToEncoderQueue([this]() {
+      light_source_switch_callback_(true);
+      waitSeconds(kDitDuration);
       light_source_switch_callback_(false);
-      waitSeconds(kIntervalDuration);
+    });
+  } else {
+    pushToEncoderQueue([this]() {
+      light_source_switch_callback_(true);
+      waitSeconds(kDahDuration);
+      light_source_switch_callback_(false);
     });
   }
-  pushToEncoderQueue([this]() {
-    waitSeconds(kCharSeparationDuration - kIntervalDuration);
-  });
 }
 
 void MorseEncoder::enqueueWord(const std::string& word) {
+  const char &last_c_caharacter = *(--word.end());
+  
   for(const char& c_character : word) {
     std::string character(1, (&c_character)[0]);
     enqueueCharacter(character);
+    
+    // For last character, do not append character separation waiting time
+    if (&c_character == &last_c_caharacter) {
+      return;
+    }
+    pushToEncoderQueue([this]() {
+      waitSeconds(kCharSeparationDuration);
+    });
   }
-  pushToEncoderQueue([this]() {
-    waitSeconds(kWordSeparationDuration - kCharSeparationDuration);
-  });
 }
 
 void MorseEncoder::enqueueMessage(std::string message) {
@@ -77,12 +102,12 @@ void MorseEncoder::enqueueMessage(std::string message) {
     word = message.substr(0, pos);
     enqueueWord(word);
     message.erase(0, pos + 1);
+    
+    pushToEncoderQueue([this]() {
+      waitSeconds(kWordSeparationDuration);
+    });
   }
   enqueueWord(message);
-  
-  pushToEncoderQueue([this]() {
-    waitSeconds(kWordSeparationDuration * 2);
-  });
 }
 
 void MorseEncoder::enqueueWordSeparator() {
