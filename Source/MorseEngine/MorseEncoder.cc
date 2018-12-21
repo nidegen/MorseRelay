@@ -44,6 +44,9 @@ void MorseEncoder::pushToEncoderQueue(std::function<void()> callback) {
 void MorseEncoder::enqueueCharacter(const std::string& character) {
   MorseGlyph glyph = MorseMapper::getGlyph(character);
 
+  if (glyph.empty()) {
+    return;
+  }
   for (int i = 0; i < glyph.size() - 1; ++i) {
     if (glyph[i] == kDitSymbol) {
       pushToEncoderQueue([this]() {

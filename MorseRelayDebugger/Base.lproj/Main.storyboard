@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -730,7 +730,7 @@
         <!--Decoder View Controller-->
         <scene sceneID="Ay9-NP-cHm">
             <objects>
-                <viewController id="k6T-Yw-IgX" customClass="DecoderViewController" customModule="MorseRelayDebugger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="k6T-Yw-IgX" customClass="NSDecoderViewController" customModule="MorseRelayDebugger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="gEk-1f-dUa">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -743,7 +743,7 @@
         <!--Encoder View Controller-->
         <scene sceneID="XY6-U2-jnD">
             <objects>
-                <viewController id="rBd-uq-j9w" customClass="EncoderViewController" customModule="MorseRelayDebugger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rBd-uq-j9w" customClass="NSEncoderViewController" customModule="MorseRelayDebugger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="kJZ-7e-ZXX">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>

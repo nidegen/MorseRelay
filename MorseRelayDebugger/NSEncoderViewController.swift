@@ -1,5 +1,5 @@
 //
-//  EncoderViewController.swift
+//  NSEncoderViewController.swift
 //  MorseRelayDebugger
 //
 //  Created by Nicolas Degen on 11.10.18.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class EncoderViewController: NSViewController {
+class NSEncoderViewController: NSViewController {
   var textEntry = NSTextField(frame: .zero)
   var morseButton = NSButton(frame: .zero)
   var resetButton = NSButton(frame: .zero)

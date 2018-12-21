@@ -1,5 +1,5 @@
 //
-//  DecoderViewController.swift
+//  NSDecoderViewController.swift
 //  MorseRelayDebugger
 //
 //  Created by Nicolas Degen on 11.10.18.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class DecoderViewController: NSViewController {
+class NSDecoderViewController: NSViewController {
   let frameProcessor = FrameProcessor()
   let cameraManager: CameraManager!
   var previewLayer: AVCaptureVideoPreviewLayer?

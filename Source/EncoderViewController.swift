@@ -31,7 +31,7 @@ class EncoderViewController: UIViewController {
   @objc func morseTextField(_ sender: UIButton?) {
     flashlightEncoder.emitMorseMessage(textEntry.text)
     sender?.backgroundColor = .red
-    morseButton.setTitle("Cancel", for: .normal)
+    morseButton.setTitle("Stop", for: .normal)
     sender?.removeTarget(nil, action: nil, for: .allEvents)
     morseButton.addTarget(self, action: #selector(cancelMorsing), for: .touchDown)
   }
