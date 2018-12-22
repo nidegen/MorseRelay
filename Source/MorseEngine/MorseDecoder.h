@@ -14,6 +14,7 @@
 #include <vector>
 
 #include "MorseMapper.h"
+#include "Timer.h"
 
 class MorseDecoder {
  public:
@@ -58,6 +59,8 @@ class MorseDecoder {
  private:
   std::vector<bool> signal_history_;
   std::string symbol_history;
+  
+  Timer timer_;
   
   std::chrono::duration<float> last_signal_duration_;
   std::chrono::duration<float> last_pause_duration_;

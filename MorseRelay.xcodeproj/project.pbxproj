@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29EE090D21CE353B009788D6 /* Timer.cc in Sources */ = {isa = PBXBuildFile; fileRef = 29EE090B21CE353B009788D6 /* Timer.cc */; };
+		29EE090E21CE353B009788D6 /* Timer.cc in Sources */ = {isa = PBXBuildFile; fileRef = 29EE090B21CE353B009788D6 /* Timer.cc */; };
+		29EE090F21CE353B009788D6 /* Timer.cc in Sources */ = {isa = PBXBuildFile; fileRef = 29EE090B21CE353B009788D6 /* Timer.cc */; };
 		3742E20E219AC04C000AB59C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37AE42C320F64B30007FF05F /* Assets.xcassets */; };
 		376350D12115E105001E730D /* Launchscreen.svg in Resources */ = {isa = PBXBuildFile; fileRef = 376350D02115E105001E730D /* Launchscreen.svg */; };
 		376350D32116CF3F001E730D /* Background.svg in Resources */ = {isa = PBXBuildFile; fileRef = 376350D22116CF3F001E730D /* Background.svg */; };
@@ -56,6 +59,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		29EE090B21CE353B009788D6 /* Timer.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cc; sourceTree = "<group>"; };
+		29EE090C21CE353B009788D6 /* Timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		376350D02115E105001E730D /* Launchscreen.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Launchscreen.svg; sourceTree = "<group>"; };
 		376350D22116CF3F001E730D /* Background.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Background.svg; sourceTree = "<group>"; };
 		3788917F20F7DCD6004D9073 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
@@ -205,6 +210,8 @@
 				37AE826A20F8D21300EE07F0 /* MorseEncoder.cc */,
 				37AE826820F8B1B800EE07F0 /* MorseMapper.h */,
 				37AE826720F8B1B800EE07F0 /* MorseMapper.cc */,
+				29EE090C21CE353B009788D6 /* Timer.h */,
+				29EE090B21CE353B009788D6 /* Timer.cc */,
 			);
 			path = MorseEngine;
 			sourceTree = "<group>";
@@ -348,6 +355,7 @@
 				379E0C1B216F25A1004749CC /* MorseDecoder.cc in Sources */,
 				379E0C18216F2544004749CC /* CameraManager.swift in Sources */,
 				379E0C19216F257D004749CC /* FlashlightEncoder.mm in Sources */,
+				29EE090F21CE353B009788D6 /* Timer.cc in Sources */,
 				379E0C1C216F25A4004749CC /* FlashTracker.cc in Sources */,
 				379E0C0B216F253B004749CC /* AppDelegate.swift in Sources */,
 				379E0C1E216F25AA004749CC /* MorseMapper.cc in Sources */,
@@ -365,6 +373,7 @@
 				37AE827220FB8D9200EE07F0 /* FlashTracker.cc in Sources */,
 				37AE826920F8B1B800EE07F0 /* MorseMapper.cc in Sources */,
 				378BC6772136F4CE00C5F0C5 /* CameraManager.swift in Sources */,
+				29EE090D21CE353B009788D6 /* Timer.cc in Sources */,
 				37AE826620F8B19C00EE07F0 /* MorseDecoder.cc in Sources */,
 				3788918720F7E356004D9073 /* FrameProcessor.mm in Sources */,
 				37AE826C20F8D21300EE07F0 /* MorseEncoder.cc in Sources */,
@@ -380,6 +389,7 @@
 				37AE827B20FE164600EE07F0 /* main.cpp in Sources */,
 				37AE828020FE178C00EE07F0 /* MorseEncoder.cc in Sources */,
 				37AE827F20FE178600EE07F0 /* MorseMapper.cc in Sources */,
+				29EE090E21CE353B009788D6 /* Timer.cc in Sources */,
 				37AE828120FE179300EE07F0 /* MorseDecoder.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

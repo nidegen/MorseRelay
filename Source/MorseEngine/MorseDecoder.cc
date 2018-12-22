@@ -66,6 +66,21 @@ void MorseDecoder::signalEndDetected() {
     std::cout << "Signal end detected without registering" << std::endl;
     std::cout << "  Duration: " << last_signal_duration_.count()/kDitDuration << " Dits, " << last_signal_duration_.count()/kDahSymbol << " Dahs" << std::endl;
   }
+  
+  timer_.create(0, 1500 * kWordSeparationDuration, [this](){
+    // Hack to finish reading
+    
+    if (signal_history_.empty()) {
+      return;
+    } else {
+      std::string symbol = MorseMapper::getSymbol(signal_history_);
+      symbol_history.append(symbol);
+      signal_history_.clear();
+      if (did_decode_word_callback_)
+        did_decode_word_callback_(symbol_history);
+      symbol_history.clear();
+    }
+  });
 }
 
 void MorseDecoder::signalStartDetected() {
