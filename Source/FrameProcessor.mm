@@ -22,6 +22,7 @@
 
 @property MorseDecoder morseDecoder;
 @property bool previousFrameHadFlash;
+@property NSTimer * timer;
 
 @end
 
@@ -87,15 +88,31 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
   if (!_previousFrameHadFlash && luminanceDelta > 1.3) {
     _morseDecoder.signalStartDetected();
     _previousFrameHadFlash = true;
-    if (_signalChangedCallback)
+    if (_signalChangedCallback) {
+      [_timer invalidate];
       _signalChangedCallback(true);
+    }
   } else if (_previousFrameHadFlash && luminanceDelta < 0.9) {
     _previousFrameHadFlash = false;
-    if (_signalChangedCallback)
+    if (_signalChangedCallback) {
+      [_timer invalidate];
       _signalChangedCallback(false);
+    }
     _morseDecoder.signalEndDetected();
+    
+    // Measures off time of signal capture. Best to do that in MorseDecoder
+    // Assert that is done on same thread as camera
+    _timer = [NSTimer scheduledTimerWithTimeInterval:2.0
+                                              target:self
+                                            selector:@selector(signalTimeOut)
+                                            userInfo:nil
+                                             repeats:NO];
   }
   CVPixelBufferUnlockBaseAddress(pixelBuffer, kCVPixelBufferLock_ReadOnly);
+}
+
+- (void)signalTimeOut {
+  _morseDecoder.finishReading();
 }
 
 - (CGRect)getROIForFrame: (CGSize) frame {

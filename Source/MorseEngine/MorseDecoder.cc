@@ -27,6 +27,8 @@ void MorseDecoder::setCleanMessageCallback(std::function<void ()> callback) {
 void MorseDecoder::finishReading() {
   time_of_last_signal_start_ = std::chrono::high_resolution_clock::now();
   last_pause_duration_ = time_of_last_signal_start_ - time_of_last_signal_end_;
+  signal_log_.push_back(std::make_pair(false, last_pause_duration_.count()));
+  
   if (last_pause_duration_.count() < kCharSeparationDuration * 1.2) {
     std::string symbol = MorseMapper::getSymbol(signal_history_);
     symbol_history.append(symbol);
