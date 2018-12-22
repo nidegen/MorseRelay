@@ -67,7 +67,7 @@ void MorseDecoder::signalEndDetected() {
     std::cout << "  Duration: " << last_signal_duration_.count()/kDitDuration << " Dits, " << last_signal_duration_.count()/kDahSymbol << " Dahs" << std::endl;
   }
   
-  timer_.create(0, 1500 * kWordSeparationDuration, [this](){
+  time_id_ = timer_.create(0, 1500 * kWordSeparationDuration, [this](){
     // Hack to finish reading
     
     if (signal_history_.empty()) {
@@ -84,6 +84,7 @@ void MorseDecoder::signalEndDetected() {
 }
 
 void MorseDecoder::signalStartDetected() {
+  timer_.destroy(time_id_);
   time_of_last_signal_start_ = std::chrono::high_resolution_clock::now();
   last_pause_duration_ = time_of_last_signal_start_ - time_of_last_signal_end_;
   

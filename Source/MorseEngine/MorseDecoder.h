@@ -61,6 +61,7 @@ class MorseDecoder {
   std::string symbol_history;
   
   Timer timer_;
+  Timer::timer_id time_id_ = 0;
   
   std::chrono::duration<float> last_signal_duration_;
   std::chrono::duration<float> last_pause_duration_;
