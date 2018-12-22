@@ -8,6 +8,8 @@
 
 #include "MorseEncoder.h"
 
+#include <future>
+
 MorseEncoder::MorseEncoder(std::function<void (bool)> callback) {
   light_source_switch_callback_ = callback;
   thread_ = std::thread([this]() {
@@ -39,6 +41,15 @@ MorseEncoder::~MorseEncoder() {
 
 void MorseEncoder::pushToEncoderQueue(std::function<void()> callback) {
   dispatch_queue_.push(callback);
+}
+void MorseEncoder::waitForQueueFinished() {
+  std::promise<bool> queue_finished_promise;
+  std::future<bool> queue_finished_future = queue_finished_promise.get_future();
+  dispatch_queue_.push([&queue_finished_promise](){
+    queue_finished_promise.set_value(true);
+  });
+  queue_finished_future.wait();
+  return;
 }
 
 void MorseEncoder::enqueueCharacter(const std::string& character) {

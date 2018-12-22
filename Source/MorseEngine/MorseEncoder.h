@@ -26,6 +26,7 @@ class MorseEncoder {
   ~MorseEncoder();
   void terminate();
   void pushToEncoderQueue(std::function<void()> callback);
+  void waitForQueueFinished();
   void enqueueWordSeparator();
   void clear();
   

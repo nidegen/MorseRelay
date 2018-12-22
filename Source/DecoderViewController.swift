@@ -74,6 +74,14 @@ class DecoderViewController: UIViewController {
         }
       }
     }
+    
+    cameraManager.setupCamera()
+    
+    let previewLayer = AVCaptureVideoPreviewLayer(session: cameraManager.captureSession)
+    previewLayer.frame = view.bounds
+    previewLayer.backgroundColor = UIColor.black.cgColor
+    previewLayer.videoGravity = .resizeAspectFill
+    view.layer.insertSublayer(previewLayer, at: 0)
   }
   
   @objc func clearOutput(_ sender: Any?) {
@@ -85,14 +93,6 @@ class DecoderViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    
-    cameraManager.setupCamera()
-    
-    let previewLayer = AVCaptureVideoPreviewLayer(session: cameraManager.captureSession)
-    previewLayer.frame = view.bounds
-    previewLayer.backgroundColor = UIColor.black.cgColor
-    previewLayer.videoGravity = .resizeAspectFill
-    view.layer.insertSublayer(previewLayer, at: 0)
   }
   
   override func viewDidLayoutSubviews() {

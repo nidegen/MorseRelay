@@ -29,6 +29,31 @@ class MorseDecoder {
   
   void signalEndDetected();
   void signalStartDetected();
+  
+  void printLog() {
+    
+    std::cout << "\n\n signals: \n" << std::endl;
+    
+    for (const auto& signal_piece : signal_log_) {
+      float duration = signal_piece.second;
+      bool is_signal = signal_piece.first;
+      
+      if (is_signal) {
+        std::cout << duration << std::endl;
+      }
+    }
+    
+    std::cout << "\n\n pauses: \n" << std::endl;
+    
+    for (const auto& signal_piece : signal_log_) {
+      float duration = signal_piece.second;
+      bool is_signal = signal_piece.first;
+      
+      if (!is_signal) {
+        std::cout << duration << std::endl;
+      }
+    }
+  }
     
  private:
   std::vector<bool> signal_history_;
@@ -43,8 +68,7 @@ class MorseDecoder {
   std::function<void (const std::string&)> did_decode_symbol_callback_;
   std::function<void (const std::string&)> did_decode_word_callback_;
   
-  std::vector<float> dit_durations_log_;
-  std::vector<float> dah_durations_log_;
+  std::vector<std::pair<bool,float>> signal_log_;
 };
 
 #endif // MORSE_DECODER_H_

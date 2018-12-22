@@ -13,7 +13,6 @@
 #import <opencv2/core/core.hpp>
 #import <opencv2/highgui/highgui.hpp>
 #import <opencv2/imgproc/imgproc.hpp>
-//#import <opencv2/imgcodecs/ios.h>
 
 #include "FlashTracker.h"
 
@@ -48,6 +47,9 @@
 }
 
 - (void)reset {
+#ifdef DEBUG
+  _morseDecoder.printLog();
+#endif
   _morseDecoder.reset();
 }
 
