@@ -18,21 +18,26 @@ class EncoderViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    flashlightEncoder.terminationCallback = {
+      DispatchQueue.main.async {
+        self.cancelMorsing(self.morseButton)
+      }
+    }
     #if DEBUG
     // flashlightEncoder?.emitMorseMessage("SMS and you")
     #endif
   }
   
   @objc func morseTextField(_ sender: UIButton?) {
-    flashlightEncoder?.emitMorseMessage(textEntry.text)
+    flashlightEncoder.emitMorseMessage(textEntry.text)
     sender?.backgroundColor = .red
-    morseButton.setTitle("Cancel", for: .normal)
+    morseButton.setTitle("Stop", for: .normal)
     sender?.removeTarget(nil, action: nil, for: .allEvents)
     morseButton.addTarget(self, action: #selector(cancelMorsing), for: .touchDown)
   }
   
   @objc func cancelMorsing(_ sender: UIButton?) {
-    flashlightEncoder?.cancelMorseEmission()
+    flashlightEncoder.cancelMorseEmission()
     sender?.backgroundColor = .green
     morseButton.setTitle("Morse", for: .normal)
     sender?.removeTarget(nil, action: nil, for: .allEvents)

@@ -33,9 +33,7 @@ int main(int argc, const char * argv[]) {
   });
   
   std::cout << "Here's to you from the walrus: \n";
-  morse_encoder_cli.morseCharacter("S");
-  morse_encoder_cli.morseCharacter("M");
-  morse_encoder_cli.morseCharacter("S");
+  morse_encoder_cli.enqueueMessage("hoi sanya");
   
   morse_decoder.setSymbolDecodedCallback([](const std::string& symbol) {
     std::cout << std::endl << "We have seen symbol: " << symbol << std::endl;
@@ -45,12 +43,11 @@ int main(int argc, const char * argv[]) {
     std::cout << std::endl << "We have seen a word: " << symbol << std::endl;
   });
   
-  morse_encoder_to_decoder.morseCharacter("S");
-  morse_encoder_to_decoder.morseCharacter("O");
-  morse_encoder_to_decoder.morseCharacter("S");
-  morse_encoder_to_decoder.callOnEncoderThread([&morse_decoder]() {
-    morse_decoder.finishReading();
-  });
+  morse_encoder_to_decoder.enqueueMessage("hoi sanya");
+  morse_encoder_to_decoder.waitForQueueFinished();
+  morse_decoder.finishReading();
+  morse_decoder.printLog();
+  
   morse_encoder_cli.terminate();
   morse_encoder_to_decoder.terminate();
   return 0;

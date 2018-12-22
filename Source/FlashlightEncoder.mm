@@ -21,7 +21,7 @@
 
 @implementation FlashlightEncoder
 - (id)init  {
-  _morseEncoder = new MorseEncoder([](bool turnOn){
+  _morseEncoder = new MorseEncoder([self](bool turnOn){
     Class captureDeviceClass = NSClassFromString(@"AVCaptureDevice");
     if (captureDeviceClass != nil) {
       AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
@@ -40,6 +40,9 @@
           std::cout << "Flash off" << std::endl;
         }
       }
+      if (_signalAction) {
+        _signalAction(turnOn);
+      }
     }
 
   });
@@ -52,12 +55,14 @@
 
 - (void)emitMorseWord:(NSString*) word {
   std::string cppWord = std::string([word UTF8String]);
-  _morseEncoder->morseWord(cppWord);
+  _morseEncoder->enqueueWord(cppWord);
+  _morseEncoder->pushToEncoderQueue(_terminationCallback);
 }
 
 - (void)emitMorseMessage:(NSString*) message {
   std::string cppWord = std::string([message UTF8String]);
-  _morseEncoder->morseMessage(cppWord);
+  _morseEncoder->enqueueMessage(cppWord);
+  _morseEncoder->pushToEncoderQueue(_terminationCallback);
 }
 
 -(void) cancelMorseEmission {

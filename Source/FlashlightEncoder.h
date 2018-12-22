@@ -8,9 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface FlashlightEncoder : NSObject
 -(id) init;
 -(void) emitMorseWord: (NSString*) word;
 -(void) emitMorseMessage: (NSString*) message;
 -(void) cancelMorseEmission;
+@property void (^terminationCallback)(void); //(void(^)()) terminationCallback;
+@property void (^signalAction)(bool); //(void(^)(bool)) signalAction;
+
 @end
+
+NS_ASSUME_NONNULL_END

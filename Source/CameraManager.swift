@@ -25,6 +25,14 @@ class CameraManager {
     self.captureDelegate = captureDelegate
   }
   
+  func startCamera() {
+    captureSession.startRunning()
+  }
+  
+  func stopCamera() {
+    captureSession.stopRunning()
+  }
+  
   func setupCamera() {
     if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
       setupCaptureSession()

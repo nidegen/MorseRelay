@@ -65,6 +65,7 @@ const SymbolToMorseGlyphMap MorseMapper::kSymbolToGlyph {
   {":", std::vector<bool> {kDahSymbol, kDahSymbol, kDahSymbol, kDitSymbol, kDitSymbol, kDitSymbol}},           // OS
   {";", std::vector<bool> {kDahSymbol, kDitSymbol, kDahSymbol, kDitSymbol, kDahSymbol, kDitSymbol}},           // NNN
   {"?", std::vector<bool> {kDitSymbol, kDitSymbol, kDahSymbol, kDahSymbol, kDitSymbol, kDitSymbol}},           // IMI
+  {"!", std::vector<bool> {kDahSymbol, kDitSymbol, kDahSymbol, kDitSymbol, kDahSymbol, kDahSymbol}},           // KW
   {"-", std::vector<bool> {kDahSymbol, kDitSymbol, kDitSymbol, kDitSymbol, kDitSymbol, kDahSymbol}},           // BA
   {"_", std::vector<bool> {kDitSymbol, kDitSymbol, kDahSymbol, kDahSymbol, kDitSymbol, kDahSymbol}},           // UK
   {"(", std::vector<bool> {kDahSymbol, kDitSymbol, kDahSymbol, kDahSymbol, kDitSymbol}},                 // KN
@@ -133,20 +134,21 @@ const MorseGlyphToSymbolMap MorseMapper::kGlyphToSymbol {
   {std::vector<bool> {kDahSymbol, kDahSymbol, kDahSymbol, kDahSymbol}, "CH"},
   {std::vector<bool> {kDahSymbol, kDahSymbol, kDitSymbol, kDahSymbol, kDahSymbol}, "Ñ"},
   
-  {std::vector<bool> {kDitSymbol, kDahSymbol, kDitSymbol, kDahSymbol, kDitSymbol, kDahSymbol}, "."},   // AAA
-  {std::vector<bool> {kDahSymbol, kDahSymbol, kDitSymbol, kDitSymbol, kDahSymbol, kDahSymbol}, ","},    // MIM
-  {std::vector<bool> {kDahSymbol, kDahSymbol, kDahSymbol, kDitSymbol, kDitSymbol, kDitSymbol}, ":"},   // OS
-  {std::vector<bool> {kDahSymbol, kDitSymbol, kDahSymbol, kDitSymbol, kDahSymbol, kDitSymbol}, ";"},   // NNN
-  {std::vector<bool> {kDitSymbol, kDitSymbol, kDahSymbol, kDahSymbol, kDitSymbol, kDitSymbol}, "?"},  // IMI
-  {std::vector<bool> {kDahSymbol, kDitSymbol, kDitSymbol, kDitSymbol, kDitSymbol, kDahSymbol}, "-"},  // BA
-  {std::vector<bool> {kDitSymbol, kDitSymbol, kDahSymbol, kDahSymbol, kDitSymbol, kDahSymbol}, "_"},   // UK
-  {std::vector<bool> {kDahSymbol, kDitSymbol, kDahSymbol, kDahSymbol, kDitSymbol}, "("},          // KN
-  {std::vector<bool> {kDahSymbol, kDitSymbol, kDahSymbol, kDahSymbol, kDitSymbol, kDahSymbol}, ")"},    // KK
-  {std::vector<bool> {kDitSymbol, kDahSymbol, kDahSymbol, kDahSymbol, kDahSymbol, kDitSymbol}, "'"},    // JN
-  {std::vector<bool> {kDahSymbol, kDitSymbol, kDitSymbol, kDitSymbol, kDahSymbol}, "="},         // BT
-  {std::vector<bool> {kDitSymbol, kDahSymbol, kDitSymbol, kDahSymbol, kDitSymbol}, "+"},         // AR
-  {std::vector<bool> {kDahSymbol, kDitSymbol, kDitSymbol, kDahSymbol, kDitSymbol}, "/"},         // DN
-  {std::vector<bool> {kDitSymbol, kDahSymbol, kDahSymbol, kDitSymbol, kDahSymbol, kDitSymbol}, "@"},   // AC
+  {std::vector<bool> {kDitSymbol, kDahSymbol, kDitSymbol, kDahSymbol, kDitSymbol, kDahSymbol}, "."}, // AAA
+  {std::vector<bool> {kDahSymbol, kDahSymbol, kDitSymbol, kDitSymbol, kDahSymbol, kDahSymbol}, ","}, // MIM
+  {std::vector<bool> {kDahSymbol, kDahSymbol, kDahSymbol, kDitSymbol, kDitSymbol, kDitSymbol}, ":"}, // OS
+  {std::vector<bool> {kDahSymbol, kDitSymbol, kDahSymbol, kDitSymbol, kDahSymbol, kDitSymbol}, ";"}, // NNN
+  {std::vector<bool> {kDitSymbol, kDitSymbol, kDahSymbol, kDahSymbol, kDitSymbol, kDitSymbol}, "?"}, // IMI
+  {std::vector<bool> {kDahSymbol, kDitSymbol, kDahSymbol, kDitSymbol, kDahSymbol, kDahSymbol}, "!"}, // KW
+  {std::vector<bool> {kDahSymbol, kDitSymbol, kDitSymbol, kDitSymbol, kDitSymbol, kDahSymbol}, "-"}, // BA
+  {std::vector<bool> {kDitSymbol, kDitSymbol, kDahSymbol, kDahSymbol, kDitSymbol, kDahSymbol}, "_"}, // UK
+  {std::vector<bool> {kDahSymbol, kDitSymbol, kDahSymbol, kDahSymbol, kDitSymbol}, "("},             // KN
+  {std::vector<bool> {kDahSymbol, kDitSymbol, kDahSymbol, kDahSymbol, kDitSymbol, kDahSymbol}, ")"}, // KK
+  {std::vector<bool> {kDitSymbol, kDahSymbol, kDahSymbol, kDahSymbol, kDahSymbol, kDitSymbol}, "'"}, // JN
+  {std::vector<bool> {kDahSymbol, kDitSymbol, kDitSymbol, kDitSymbol, kDahSymbol}, "="},             // BT
+  {std::vector<bool> {kDitSymbol, kDahSymbol, kDitSymbol, kDahSymbol, kDitSymbol}, "+"},             // AR
+  {std::vector<bool> {kDahSymbol, kDitSymbol, kDitSymbol, kDahSymbol, kDitSymbol}, "/"},             // DN
+  {std::vector<bool> {kDitSymbol, kDahSymbol, kDahSymbol, kDitSymbol, kDahSymbol, kDitSymbol}, "@"}, // AC
   
   // {std::vector<bool> {kDahSymbol, kDitSymbol, kDahSymbol, kDitSymbol, kDahSymbol}, "KA (Spruchanfang)"},
   // {std::vector<bool> {kDahSymbol, kDitSymbol, kDitSymbol, kDitSymbol, kDahSymbol}, "BT (Pause)"},
