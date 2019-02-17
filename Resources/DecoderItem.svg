@@ -28,9 +28,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="55.495634"
-     inkscape:cy="170.25068"
+     inkscape:zoom="1.979899"
+     inkscape:cx="116.84578"
+     inkscape:cy="124.67479"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -38,9 +38,9 @@
      inkscape:snap-nodes="true"
      inkscape:snap-bbox="true"
      units="px"
-     inkscape:window-width="1327"
+     inkscape:window-width="1319"
      inkscape:window-height="723"
-     inkscape:window-x="39"
+     inkscape:window-x="47"
      inkscape:window-y="1"
      inkscape:window-maximized="1">
     <inkscape:grid
@@ -74,26 +74,26 @@
        id="rect842"
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:22;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:220.11000061" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:16;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:48,16;stroke-dashoffset:3.2"
+       style="fill:none;stroke:#000000;stroke-width:22;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:66,22;stroke-dashoffset:26.4"
        d="M 80,882.36223 H 180"
        id="path846"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:16;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:48,16;stroke-dashoffset:3.2"
+       style="fill:none;stroke:#000000;stroke-width:22;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:66,22;stroke-dashoffset:26.4"
        d="M 80,922.36223 H 180"
        id="path848"
        inkscape:connector-curvature="0" />
     <circle
-       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:11;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:13.19999981"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:12.94454384;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:13.19999981"
        id="path856"
        cx="210"
        cy="882.36224"
-       r="10" />
+       r="11.767767" />
     <circle
-       r="10"
-       cy="921.79083"
-       cx="210"
-       id="circle858"
-       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:11;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:13.19999981" />
+       r="11.767767"
+       cy="922.51581"
+       cx="209.74747"
+       id="circle818"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:12.94454384;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:13.19999981" />
   </g>
 </svg>
