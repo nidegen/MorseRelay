@@ -1,0 +1,3 @@
+[submodule "Submodule/NDKit"]
+	path = Submodule/NDKit
+	url = https://github.com/nidegen/NDKit

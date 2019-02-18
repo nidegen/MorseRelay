@@ -8,6 +8,8 @@
 
 import UIKit
 
+import NDKit
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -29,6 +31,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     window!.rootViewController = tabBarController
     window!.makeKeyAndVisible()
+    
+    let welcomeScreen = NDWelcomeViewController()
+    
+    welcomeScreen.details[UIImage(named: "EmmitIcon")!] = ("Text to Morse","Write a text to emitt using the torch")
+    welcomeScreen.details[UIImage(named: "ReceiveIcon")!] = ("Morse to Text","Capture a emitted morse signal with the camera and display it as text")
+    
+    welcomeScreen.presentIfNotSeen()
     return true
   }
 }
