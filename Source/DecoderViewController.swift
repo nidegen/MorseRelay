@@ -9,6 +9,8 @@ import UIKit
 import AVFoundation
 import CoreImage
 
+import CameraKit
+
 class DecoderViewController: UIViewController {
   
   // MARK: - UI Properties
@@ -21,18 +23,18 @@ class DecoderViewController: UIViewController {
   let frameProcessor = FrameProcessor()
   var previewLayer: AVCaptureVideoPreviewLayer?
   
-  var cameraManager: CameraManager!
+  let cameraManager = CameraManager()
   
   var currentText = ""
   var currentWord = ""
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-    cameraManager = CameraManager(captureDelegate: frameProcessor)
+    cameraManager.sampleBufferOutputDelegate = frameProcessor
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
   }
   
   required init?(coder aDecoder: NSCoder) {
-    cameraManager = CameraManager(captureDelegate: frameProcessor)
+    cameraManager.sampleBufferOutputDelegate = frameProcessor
     super.init(coder: aDecoder)
   }
   
@@ -40,6 +42,7 @@ class DecoderViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    cameraManager.startCamera()
     frameProcessor.reset()
   }
   
@@ -78,11 +81,7 @@ class DecoderViewController: UIViewController {
     
     cameraManager.setupCamera()
     
-    let previewLayer = AVCaptureVideoPreviewLayer(session: cameraManager.captureSession)
-    previewLayer.frame = view.bounds
-    previewLayer.backgroundColor = UIColor.black.cgColor
-    previewLayer.videoGravity = .resizeAspectFill
-    view.layer.insertSublayer(previewLayer, at: 0)
+    cameraManager.addPreviewLayer(view: view)
   }
   
   @objc func clearOutput(_ sender: Any?) {
@@ -108,8 +107,9 @@ class DecoderViewController: UIViewController {
     frameProcessor.stopProcessing()
   }
   
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    cameraManager.stopCamera()
   }
   
   override func viewDidLayoutSubviews() {

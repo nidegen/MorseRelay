@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372317AD223BF7EE007617A8 /* NDKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372317A6223BF7C3007617A8 /* NDKit.framework */; };
+		372317AE223BF7EE007617A8 /* NDKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 372317A6223BF7C3007617A8 /* NDKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		372317B2223BF7F5007617A8 /* CameraKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3723179D223BF7B7007617A8 /* CameraKit.framework */; };
+		372317B3223BF7F5007617A8 /* CameraKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3723179D223BF7B7007617A8 /* CameraKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		376350D12115E105001E730D /* Launchscreen.svg in Resources */ = {isa = PBXBuildFile; fileRef = 376350D02115E105001E730D /* Launchscreen.svg */; };
 		376350D32116CF3F001E730D /* Background.svg in Resources */ = {isa = PBXBuildFile; fileRef = 376350D22116CF3F001E730D /* Background.svg */; };
 		3788918720F7E356004D9073 /* FrameProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3788918620F7E356004D9073 /* FrameProcessor.mm */; };
 		3788918820F7E4DD004D9073 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3788917F20F7DCD6004D9073 /* opencv2.framework */; };
-		378BC6772136F4CE00C5F0C5 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378BC6762136F4CE00C5F0C5 /* CameraManager.swift */; };
 		379E0C0B216F253B004749CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379E0C0A216F253B004749CC /* AppDelegate.swift */; };
 		379E0C0D216F253B004749CC /* NSDecoderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379E0C0C216F253B004749CC /* NSDecoderViewController.swift */; };
 		379E0C0F216F253C004749CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 379E0C0E216F253C004749CC /* Assets.xcassets */; };
 		379E0C12216F253C004749CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379E0C10216F253C004749CC /* Main.storyboard */; };
-		379E0C18216F2544004749CC /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378BC6762136F4CE00C5F0C5 /* CameraManager.swift */; };
 		379E0C19216F257D004749CC /* FlashlightEncoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826E20F9FB4200EE07F0 /* FlashlightEncoder.mm */; };
 		379E0C1A216F2594004749CC /* FrameProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3788918620F7E356004D9073 /* FrameProcessor.mm */; };
 		379E0C1B216F25A1004749CC /* MorseDecoder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826420F8B19C00EE07F0 /* MorseDecoder.cc */; };
@@ -42,7 +44,78 @@
 		37AE82882104D80A00EE07F0 /* AppIcon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 37AE82872104D80A00EE07F0 /* AppIcon.svg */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3723179C223BF7B7007617A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37231797223BF7B7007617A8 /* CameraKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 29E43B652180EEE2008BFDD0;
+			remoteInfo = CameraKit;
+		};
+		3723179E223BF7B7007617A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37231797223BF7B7007617A8 /* CameraKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 29FC5028222BD9F6004DC389;
+			remoteInfo = Example;
+		};
+		372317A5223BF7C3007617A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 372317A0223BF7C3007617A8 /* NDKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 29ED7B0221E9F21F0094D65D;
+			remoteInfo = NDKit;
+		};
+		372317A7223BF7C3007617A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 372317A0223BF7C3007617A8 /* NDKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 29591279221720F40011EC2E;
+			remoteInfo = NiDemo;
+		};
+		372317A9223BF7CE007617A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 372317A0223BF7C3007617A8 /* NDKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 29ED7B0121E9F21F0094D65D;
+			remoteInfo = NDKit;
+		};
+		372317AB223BF7CE007617A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37231797223BF7B7007617A8 /* CameraKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 29E43B642180EEE2008BFDD0;
+			remoteInfo = CameraKit;
+		};
+		372317AF223BF7EE007617A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 372317A0223BF7C3007617A8 /* NDKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 29ED7B0121E9F21F0094D65D;
+			remoteInfo = NDKit;
+		};
+		372317B4223BF7F5007617A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37231797223BF7B7007617A8 /* CameraKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 29E43B642180EEE2008BFDD0;
+			remoteInfo = CameraKit;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		372317B1223BF7EE007617A8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				372317B3223BF7F5007617A8 /* CameraKit.framework in Embed Frameworks */,
+				372317AE223BF7EE007617A8 /* NDKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		37AE827620FE164600EE07F0 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -55,13 +128,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		37231797223BF7B7007617A8 /* CameraKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CameraKit.xcodeproj; path = Submodule/CameraKit/CameraKit.xcodeproj; sourceTree = SOURCE_ROOT; };
+		372317A0223BF7C3007617A8 /* NDKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NDKit.xcodeproj; path = Submodule/NDKit/NDKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		376350D02115E105001E730D /* Launchscreen.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Launchscreen.svg; sourceTree = "<group>"; };
 		376350D22116CF3F001E730D /* Background.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Background.svg; sourceTree = "<group>"; };
 		3788917F20F7DCD6004D9073 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		3788918420F7E356004D9073 /* MorseRelay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MorseRelay-Bridging-Header.h"; sourceTree = "<group>"; };
 		3788918520F7E356004D9073 /* FrameProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrameProcessor.h; sourceTree = "<group>"; };
 		3788918620F7E356004D9073 /* FrameProcessor.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FrameProcessor.mm; sourceTree = "<group>"; };
-		378BC6762136F4CE00C5F0C5 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		379E0C08216F253B004749CC /* MorseRelayDebugger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorseRelayDebugger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		379E0C0A216F253B004749CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		379E0C0C216F253B004749CC /* NSDecoderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDecoderViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +179,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372317B2223BF7F5007617A8 /* CameraKit.framework in Frameworks */,
 				3788918820F7E4DD004D9073 /* opencv2.framework in Frameworks */,
+				372317AD223BF7EE007617A8 /* NDKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,9 +195,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37231798223BF7B7007617A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3723179D223BF7B7007617A8 /* CameraKit.framework */,
+				3723179F223BF7B7007617A8 /* Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		372317A1223BF7C3007617A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				372317A6223BF7C3007617A8 /* NDKit.framework */,
+				372317A8223BF7C3007617A8 /* NiDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		3788917E20F7DCD6004D9073 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				372317A0223BF7C3007617A8 /* NDKit.xcodeproj */,
+				37231797223BF7B7007617A8 /* CameraKit.xcodeproj */,
 				3788917F20F7DCD6004D9073 /* opencv2.framework */,
 			);
 			path = Frameworks;
@@ -187,7 +283,6 @@
 				37AE42BC20F64B2F007FF05F /* AppDelegate.swift */,
 				37AE42BE20F64B2F007FF05F /* DecoderViewController.swift */,
 				37AE82852104D23A00EE07F0 /* EncoderViewController.swift */,
-				378BC6762136F4CE00C5F0C5 /* CameraManager.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -243,10 +338,15 @@
 				37AE42B520F64B2F007FF05F /* Sources */,
 				37AE42B620F64B2F007FF05F /* Frameworks */,
 				37AE42B720F64B2F007FF05F /* Resources */,
+				372317B1223BF7EE007617A8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				372317AA223BF7CE007617A8 /* PBXTargetDependency */,
+				372317AC223BF7CE007617A8 /* PBXTargetDependency */,
+				372317B0223BF7EE007617A8 /* PBXTargetDependency */,
+				372317B5223BF7F5007617A8 /* PBXTargetDependency */,
 			);
 			name = MorseRelay;
 			productName = MorseRelay;
@@ -303,6 +403,16 @@
 			mainGroup = 37AE42B020F64B2F007FF05F;
 			productRefGroup = 37AE42BA20F64B2F007FF05F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 37231798223BF7B7007617A8 /* Products */;
+					ProjectRef = 37231797223BF7B7007617A8 /* CameraKit.xcodeproj */;
+				},
+				{
+					ProductGroup = 372317A1223BF7C3007617A8 /* Products */;
+					ProjectRef = 372317A0223BF7C3007617A8 /* NDKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				37AE42B820F64B2F007FF05F /* MorseRelay */,
@@ -311,6 +421,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3723179D223BF7B7007617A8 /* CameraKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CameraKit.framework;
+			remoteRef = 3723179C223BF7B7007617A8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3723179F223BF7B7007617A8 /* Example.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Example.app;
+			remoteRef = 3723179E223BF7B7007617A8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		372317A6223BF7C3007617A8 /* NDKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = NDKit.framework;
+			remoteRef = 372317A5223BF7C3007617A8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		372317A8223BF7C3007617A8 /* NiDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = NiDemo.app;
+			remoteRef = 372317A7223BF7C3007617A8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		379E0C06216F253B004749CC /* Resources */ = {
@@ -344,7 +485,6 @@
 				379E0C0D216F253B004749CC /* NSDecoderViewController.swift in Sources */,
 				379E0C1D216F25A7004749CC /* MorseEncoder.cc in Sources */,
 				379E0C1B216F25A1004749CC /* MorseDecoder.cc in Sources */,
-				379E0C18216F2544004749CC /* CameraManager.swift in Sources */,
 				379E0C19216F257D004749CC /* FlashlightEncoder.mm in Sources */,
 				379E0C1C216F25A4004749CC /* FlashTracker.cc in Sources */,
 				379E0C0B216F253B004749CC /* AppDelegate.swift in Sources */,
@@ -362,7 +502,6 @@
 				37AE42BD20F64B2F007FF05F /* AppDelegate.swift in Sources */,
 				37AE827220FB8D9200EE07F0 /* FlashTracker.cc in Sources */,
 				37AE826920F8B1B800EE07F0 /* MorseMapper.cc in Sources */,
-				378BC6772136F4CE00C5F0C5 /* CameraManager.swift in Sources */,
 				37AE826620F8B19C00EE07F0 /* MorseDecoder.cc in Sources */,
 				3788918720F7E356004D9073 /* FrameProcessor.mm in Sources */,
 				37AE826C20F8D21300EE07F0 /* MorseEncoder.cc in Sources */,
@@ -383,6 +522,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		372317AA223BF7CE007617A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NDKit;
+			targetProxy = 372317A9223BF7CE007617A8 /* PBXContainerItemProxy */;
+		};
+		372317AC223BF7CE007617A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CameraKit;
+			targetProxy = 372317AB223BF7CE007617A8 /* PBXContainerItemProxy */;
+		};
+		372317B0223BF7EE007617A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NDKit;
+			targetProxy = 372317AF223BF7EE007617A8 /* PBXContainerItemProxy */;
+		};
+		372317B5223BF7F5007617A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CameraKit;
+			targetProxy = 372317B4223BF7F5007617A8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		379E0C10216F253C004749CC /* Main.storyboard */ = {
@@ -578,6 +740,7 @@
 		37AE42CC20F64B30007FF05F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
@@ -588,6 +751,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -604,6 +768,7 @@
 		37AE42CD20F64B30007FF05F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
@@ -614,6 +779,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
