@@ -58,12 +58,26 @@
 			remoteGlobalIDString = 29591279221720F40011EC2E;
 			remoteInfo = NiDemo;
 		};
-		29D64A31221A293C00527FB2 /* PBXContainerItemProxy */ = {
+		3723178A223BF304007617A8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29D64A24221A290B00527FB2 /* NDKit.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 29ED7B0121E9F21F0094D65D;
 			remoteInfo = NDKit;
+		};
+		37231791223BF343007617A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3723178C223BF343007617A8 /* CameraKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 29E43B652180EEE2008BFDD0;
+			remoteInfo = CameraKit;
+		};
+		37231793223BF343007617A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3723178C223BF343007617A8 /* CameraKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 29FC5028222BD9F6004DC389;
+			remoteInfo = Example;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -81,6 +95,7 @@
 
 /* Begin PBXFileReference section */
 		29D64A24221A290B00527FB2 /* NDKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NDKit.xcodeproj; path = Submodule/NDKit/NDKit.xcodeproj; sourceTree = SOURCE_ROOT; };
+		3723178C223BF343007617A8 /* CameraKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CameraKit.xcodeproj; path = Submodule/CameraKit/CameraKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		376350D02115E105001E730D /* Launchscreen.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Launchscreen.svg; sourceTree = "<group>"; };
 		376350D22116CF3F001E730D /* Background.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Background.svg; sourceTree = "<group>"; };
 		3788917F20F7DCD6004D9073 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
@@ -155,9 +170,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3723178D223BF343007617A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37231792223BF343007617A8 /* CameraKit.framework */,
+				37231794223BF343007617A8 /* Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		3788917E20F7DCD6004D9073 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3723178C223BF343007617A8 /* CameraKit.xcodeproj */,
 				29D64A24221A290B00527FB2 /* NDKit.xcodeproj */,
 				3788917F20F7DCD6004D9073 /* opencv2.framework */,
 			);
@@ -284,7 +309,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				29D64A32221A293C00527FB2 /* PBXTargetDependency */,
+				3723178B223BF304007617A8 /* PBXTargetDependency */,
 			);
 			name = MorseRelay;
 			productName = MorseRelay;
@@ -343,6 +368,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 3723178D223BF343007617A8 /* Products */;
+					ProjectRef = 3723178C223BF343007617A8 /* CameraKit.xcodeproj */;
+				},
+				{
 					ProductGroup = 29D64A25221A290B00527FB2 /* Products */;
 					ProjectRef = 29D64A24221A290B00527FB2 /* NDKit.xcodeproj */;
 				},
@@ -369,6 +398,20 @@
 			fileType = wrapper.application;
 			path = NiDemo.app;
 			remoteRef = 29D64A2B221A290B00527FB2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		37231792223BF343007617A8 /* CameraKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CameraKit.framework;
+			remoteRef = 37231791223BF343007617A8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		37231794223BF343007617A8 /* Example.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Example.app;
+			remoteRef = 37231793223BF343007617A8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -446,10 +489,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		29D64A32221A293C00527FB2 /* PBXTargetDependency */ = {
+		3723178B223BF304007617A8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = NDKit;
-			targetProxy = 29D64A31221A293C00527FB2 /* PBXContainerItemProxy */;
+			targetProxy = 3723178A223BF304007617A8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
