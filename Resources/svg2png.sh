@@ -1,6 +1,6 @@
 #!/bin/bash
 
-svg2png () {
+addSvg2pngCommand () {
   echo "###########################################################################"
   echo "SVG to PNG for squared SVG wiht 100x100 pixel size! no other svg size work"
   echo "###########################################################################"
@@ -37,10 +37,10 @@ svg2png () {
       NEW_RES=$(echo "$RESOLUTION * $SCALE" | bc)
 
       if [[ "${OVERRIDE}" == "true" ]]; then
-        inkscape -f $INPUT_FILEPATH/$INPUT_FILENAME -e $DESTINATION -y 0 -w $NEW_RES
+        echo -f $INPUT_FILEPATH/$INPUT_FILENAME -e $DESTINATION -y 0 -w $NEW_RES >> commands.txt
       else
         if [ ! -f $DESTINATION ]; then
-          inkscape -f $INPUT_FILEPATH/$INPUT_FILENAME -e $DESTINATION -y 0 -w $NEW_RES
+          echo -f $INPUT_FILEPATH/$INPUT_FILENAME -e $DESTINATION -y 0 -w $NEW_RES >> commands.txt
         else
           echo "Not overriding existing file $DESTINATION"
         fi
