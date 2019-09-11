@@ -246,7 +246,10 @@
 				37AE42BB20F64B2F007FF05F /* Resources */,
 				37AE42BA20F64B2F007FF05F /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
 		};
 		37AE42BA20F64B2F007FF05F /* Products */ = {
 			isa = PBXGroup;
@@ -385,7 +388,7 @@
 					};
 					37AE42B820F64B2F007FF05F = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1030;
 					};
 					37AE827720FE164600EE07F0 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -760,7 +763,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/MorseRelay-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -787,7 +790,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nide.morserelay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/MorseRelay-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
