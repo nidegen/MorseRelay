@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		371A2045233E005000E57BC1 /* EncoderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371A2044233E005000E57BC1 /* EncoderView.swift */; };
+		371A2049233E03D100E57BC1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371A2048233E03D100E57BC1 /* MainView.swift */; };
 		372317AD223BF7EE007617A8 /* NDKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372317A6223BF7C3007617A8 /* NDKit.framework */; };
 		372317AE223BF7EE007617A8 /* NDKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 372317A6223BF7C3007617A8 /* NDKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		372317B2223BF7F5007617A8 /* CameraKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3723179D223BF7B7007617A8 /* CameraKit.framework */; };
 		372317B3223BF7F5007617A8 /* CameraKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3723179D223BF7B7007617A8 /* CameraKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		376350D12115E105001E730D /* Launchscreen.svg in Resources */ = {isa = PBXBuildFile; fileRef = 376350D02115E105001E730D /* Launchscreen.svg */; };
-		376350D32116CF3F001E730D /* Background.svg in Resources */ = {isa = PBXBuildFile; fileRef = 376350D22116CF3F001E730D /* Background.svg */; };
 		3788918720F7E356004D9073 /* FrameProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3788918620F7E356004D9073 /* FrameProcessor.mm */; };
 		3788918820F7E4DD004D9073 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3788917F20F7DCD6004D9073 /* opencv2.framework */; };
 		379E0C0B216F253B004749CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379E0C0A216F253B004749CC /* AppDelegate.swift */; };
@@ -41,7 +41,6 @@
 		37AE828020FE178C00EE07F0 /* MorseEncoder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826A20F8D21300EE07F0 /* MorseEncoder.cc */; };
 		37AE828120FE179300EE07F0 /* MorseDecoder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826420F8B19C00EE07F0 /* MorseDecoder.cc */; };
 		37AE82862104D23A00EE07F0 /* EncoderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE82852104D23A00EE07F0 /* EncoderViewController.swift */; };
-		37AE82882104D80A00EE07F0 /* AppIcon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 37AE82872104D80A00EE07F0 /* AppIcon.svg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,10 +127,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		371A2044233E005000E57BC1 /* EncoderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncoderView.swift; sourceTree = "<group>"; };
+		371A2048233E03D100E57BC1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		37231797223BF7B7007617A8 /* CameraKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CameraKit.xcodeproj; path = Submodule/CameraKit/CameraKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		372317A0223BF7C3007617A8 /* NDKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NDKit.xcodeproj; path = Submodule/NDKit/NDKit.xcodeproj; sourceTree = SOURCE_ROOT; };
-		376350D02115E105001E730D /* Launchscreen.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Launchscreen.svg; sourceTree = "<group>"; };
-		376350D22116CF3F001E730D /* Background.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Background.svg; sourceTree = "<group>"; };
 		3788917F20F7DCD6004D9073 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		3788918420F7E356004D9073 /* MorseRelay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MorseRelay-Bridging-Header.h"; sourceTree = "<group>"; };
 		3788918520F7E356004D9073 /* FrameProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrameProcessor.h; sourceTree = "<group>"; };
@@ -163,7 +162,6 @@
 		37AE827820FE164600EE07F0 /* Walrus */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Walrus; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AE827A20FE164600EE07F0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		37AE82852104D23A00EE07F0 /* EncoderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncoderViewController.swift; sourceTree = "<group>"; };
-		37AE82872104D80A00EE07F0 /* AppIcon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AppIcon.svg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,9 +259,6 @@
 		37AE42BB20F64B2F007FF05F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				376350D02115E105001E730D /* Launchscreen.svg */,
-				376350D22116CF3F001E730D /* Background.svg */,
-				37AE82872104D80A00EE07F0 /* AppIcon.svg */,
 				37AE42C320F64B30007FF05F /* Assets.xcassets */,
 				37AE42C520F64B30007FF05F /* LaunchScreen.storyboard */,
 				37AE42C820F64B30007FF05F /* Info.plist */,
@@ -283,6 +278,8 @@
 				37AE42BC20F64B2F007FF05F /* AppDelegate.swift */,
 				37AE42BE20F64B2F007FF05F /* DecoderViewController.swift */,
 				37AE82852104D23A00EE07F0 /* EncoderViewController.swift */,
+				371A2044233E005000E57BC1 /* EncoderView.swift */,
+				371A2048233E03D100E57BC1 /* MainView.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -467,9 +464,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37AE82882104D80A00EE07F0 /* AppIcon.svg in Resources */,
-				376350D12115E105001E730D /* Launchscreen.svg in Resources */,
-				376350D32116CF3F001E730D /* Background.svg in Resources */,
 				37AE42C720F64B30007FF05F /* LaunchScreen.storyboard in Resources */,
 				37AE42C420F64B30007FF05F /* Assets.xcassets in Resources */,
 			);
@@ -505,8 +499,10 @@
 				37AE826620F8B19C00EE07F0 /* MorseDecoder.cc in Sources */,
 				3788918720F7E356004D9073 /* FrameProcessor.mm in Sources */,
 				37AE826C20F8D21300EE07F0 /* MorseEncoder.cc in Sources */,
+				371A2049233E03D100E57BC1 /* MainView.swift in Sources */,
 				37AE826F20F9FB4200EE07F0 /* FlashlightEncoder.mm in Sources */,
 				37AE82862104D23A00EE07F0 /* EncoderViewController.swift in Sources */,
+				371A2045233E005000E57BC1 /* EncoderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -751,7 +747,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -779,7 +775,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
