@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		372317B3223BF7F5007617A8 /* CameraKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3723179D223BF7B7007617A8 /* CameraKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		376350D12115E105001E730D /* Launchscreen.svg in Resources */ = {isa = PBXBuildFile; fileRef = 376350D02115E105001E730D /* Launchscreen.svg */; };
 		376350D32116CF3F001E730D /* Background.svg in Resources */ = {isa = PBXBuildFile; fileRef = 376350D22116CF3F001E730D /* Background.svg */; };
+		37831CF02391C93100AF980E /* MultilineTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 37831CEF2391C93100AF980E /* MultilineTextField */; };
+		37837A4C233D4AA500A4DC18 /* EncoderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37837A4B233D4AA500A4DC18 /* EncoderView.swift */; };
 		3788918720F7E356004D9073 /* FrameProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3788918620F7E356004D9073 /* FrameProcessor.mm */; };
 		3788918820F7E4DD004D9073 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3788917F20F7DCD6004D9073 /* opencv2.framework */; };
 		379E0C0B216F253B004749CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379E0C0A216F253B004749CC /* AppDelegate.swift */; };
@@ -42,6 +44,8 @@
 		37AE828120FE179300EE07F0 /* MorseDecoder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826420F8B19C00EE07F0 /* MorseDecoder.cc */; };
 		37AE82862104D23A00EE07F0 /* EncoderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE82852104D23A00EE07F0 /* EncoderViewController.swift */; };
 		37AE82882104D80A00EE07F0 /* AppIcon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 37AE82872104D80A00EE07F0 /* AppIcon.svg */; };
+		37B406D023E8D313008CA34A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B406CF23E8D313008CA34A /* ContentView.swift */; };
+		37B406D223E8D51F008CA34A /* DecoderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B406D123E8D51F008CA34A /* DecoderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +136,8 @@
 		372317A0223BF7C3007617A8 /* NDKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NDKit.xcodeproj; path = Submodule/NDKit/NDKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		376350D02115E105001E730D /* Launchscreen.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Launchscreen.svg; sourceTree = "<group>"; };
 		376350D22116CF3F001E730D /* Background.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Background.svg; sourceTree = "<group>"; };
+		37831CEC2391C91900AF980E /* MultilineTextField */ = {isa = PBXFileReference; lastKnownFileType = text; name = MultilineTextField; path = Submodule/MultilineTextField; sourceTree = SOURCE_ROOT; };
+		37837A4B233D4AA500A4DC18 /* EncoderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncoderView.swift; sourceTree = "<group>"; };
 		3788917F20F7DCD6004D9073 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		3788918420F7E356004D9073 /* MorseRelay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MorseRelay-Bridging-Header.h"; sourceTree = "<group>"; };
 		3788918520F7E356004D9073 /* FrameProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrameProcessor.h; sourceTree = "<group>"; };
@@ -164,6 +170,8 @@
 		37AE827A20FE164600EE07F0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		37AE82852104D23A00EE07F0 /* EncoderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncoderViewController.swift; sourceTree = "<group>"; };
 		37AE82872104D80A00EE07F0 /* AppIcon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AppIcon.svg; sourceTree = "<group>"; };
+		37B406CF23E8D313008CA34A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		37B406D123E8D51F008CA34A /* DecoderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +189,7 @@
 			files = (
 				372317B2223BF7F5007617A8 /* CameraKit.framework in Frameworks */,
 				3788918820F7E4DD004D9073 /* opencv2.framework in Frameworks */,
+				37831CF02391C93100AF980E /* MultilineTextField in Frameworks */,
 				372317AD223BF7EE007617A8 /* NDKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +225,7 @@
 		3788917E20F7DCD6004D9073 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37831CEC2391C91900AF980E /* MultilineTextField */,
 				372317A0223BF7C3007617A8 /* NDKit.xcodeproj */,
 				37231797223BF7B7007617A8 /* CameraKit.xcodeproj */,
 				3788917F20F7DCD6004D9073 /* opencv2.framework */,
@@ -286,6 +296,9 @@
 				37AE42BC20F64B2F007FF05F /* AppDelegate.swift */,
 				37AE42BE20F64B2F007FF05F /* DecoderViewController.swift */,
 				37AE82852104D23A00EE07F0 /* EncoderViewController.swift */,
+				37837A4B233D4AA500A4DC18 /* EncoderView.swift */,
+				37B406CF23E8D313008CA34A /* ContentView.swift */,
+				37B406D123E8D51F008CA34A /* DecoderView.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -352,6 +365,9 @@
 				372317B5223BF7F5007617A8 /* PBXTargetDependency */,
 			);
 			name = MorseRelay;
+			packageProductDependencies = (
+				37831CEF2391C93100AF980E /* MultilineTextField */,
+			);
 			productName = MorseRelay;
 			productReference = 37AE42B920F64B2F007FF05F /* MorseRelay.app */;
 			productType = "com.apple.product-type.application";
@@ -502,6 +518,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37AE42BF20F64B2F007FF05F /* DecoderViewController.swift in Sources */,
+				37B406D023E8D313008CA34A /* ContentView.swift in Sources */,
 				37AE42BD20F64B2F007FF05F /* AppDelegate.swift in Sources */,
 				37AE827220FB8D9200EE07F0 /* FlashTracker.cc in Sources */,
 				37AE826920F8B1B800EE07F0 /* MorseMapper.cc in Sources */,
@@ -509,7 +526,9 @@
 				3788918720F7E356004D9073 /* FrameProcessor.mm in Sources */,
 				37AE826C20F8D21300EE07F0 /* MorseEncoder.cc in Sources */,
 				37AE826F20F9FB4200EE07F0 /* FlashlightEncoder.mm in Sources */,
+				37B406D223E8D51F008CA34A /* DecoderView.swift in Sources */,
 				37AE82862104D23A00EE07F0 /* EncoderViewController.swift in Sources */,
+				37837A4C233D4AA500A4DC18 /* EncoderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,7 +696,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -731,7 +751,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -754,7 +775,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -782,7 +803,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -859,6 +880,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		37831CEF2391C93100AF980E /* MultilineTextField */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MultilineTextField;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 37AE42B120F64B2F007FF05F /* Project object */;
 }
