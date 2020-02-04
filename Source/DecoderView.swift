@@ -30,8 +30,8 @@ struct DecoderView: View {
     }
     .tabItem {
       VStack {
-        Image(systemName: "camera.fill")
-        Text("Camera")
+        Image("DecoderItem")
+        Text("Decoder")
       }
     }
   }

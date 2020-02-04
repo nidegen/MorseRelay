@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import SwiftUI
+
+import NDKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,8 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     tabBarController.tabBar.barStyle = .black
     
-    window!.rootViewController = tabBarController
+//    window!.rootViewController = tabBarController
+    window!.rootViewController = UIHostingController(rootView: ContentView())
     window!.makeKeyAndVisible()
+    
+    let welcomeScreen = NDWelcomeViewController()
+    welcomeScreen.details.append((UIImage(named: "EmittIcon")!, "Text to Morse","Write a text to emitt using the torch"))
+    welcomeScreen.details.append((UIImage(named: "ReceiveIcon")!, "Morse to Text","Capture a emitted morse signal with the camera and display it as text"))
+    
+    welcomeScreen.presentIfNotSeen()
     return true
   }
 }

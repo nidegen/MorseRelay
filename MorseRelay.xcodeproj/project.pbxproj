@@ -11,8 +11,6 @@
 		372317AE223BF7EE007617A8 /* NDKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 372317A6223BF7C3007617A8 /* NDKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		372317B2223BF7F5007617A8 /* CameraKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3723179D223BF7B7007617A8 /* CameraKit.framework */; };
 		372317B3223BF7F5007617A8 /* CameraKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3723179D223BF7B7007617A8 /* CameraKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		376350D12115E105001E730D /* Launchscreen.svg in Resources */ = {isa = PBXBuildFile; fileRef = 376350D02115E105001E730D /* Launchscreen.svg */; };
-		376350D32116CF3F001E730D /* Background.svg in Resources */ = {isa = PBXBuildFile; fileRef = 376350D22116CF3F001E730D /* Background.svg */; };
 		37831CF02391C93100AF980E /* MultilineTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 37831CEF2391C93100AF980E /* MultilineTextField */; };
 		37837A4C233D4AA500A4DC18 /* EncoderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37837A4B233D4AA500A4DC18 /* EncoderView.swift */; };
 		3788918720F7E356004D9073 /* FrameProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3788918620F7E356004D9073 /* FrameProcessor.mm */; };
@@ -43,7 +41,6 @@
 		37AE828020FE178C00EE07F0 /* MorseEncoder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826A20F8D21300EE07F0 /* MorseEncoder.cc */; };
 		37AE828120FE179300EE07F0 /* MorseDecoder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826420F8B19C00EE07F0 /* MorseDecoder.cc */; };
 		37AE82862104D23A00EE07F0 /* EncoderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE82852104D23A00EE07F0 /* EncoderViewController.swift */; };
-		37AE82882104D80A00EE07F0 /* AppIcon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 37AE82872104D80A00EE07F0 /* AppIcon.svg */; };
 		37B406D023E8D313008CA34A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B406CF23E8D313008CA34A /* ContentView.swift */; };
 		37B406D223E8D51F008CA34A /* DecoderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B406D123E8D51F008CA34A /* DecoderView.swift */; };
 /* End PBXBuildFile section */
@@ -134,8 +131,6 @@
 /* Begin PBXFileReference section */
 		37231797223BF7B7007617A8 /* CameraKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CameraKit.xcodeproj; path = Submodule/CameraKit/CameraKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		372317A0223BF7C3007617A8 /* NDKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NDKit.xcodeproj; path = Submodule/NDKit/NDKit.xcodeproj; sourceTree = SOURCE_ROOT; };
-		376350D02115E105001E730D /* Launchscreen.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Launchscreen.svg; sourceTree = "<group>"; };
-		376350D22116CF3F001E730D /* Background.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Background.svg; sourceTree = "<group>"; };
 		37831CEC2391C91900AF980E /* MultilineTextField */ = {isa = PBXFileReference; lastKnownFileType = text; name = MultilineTextField; path = Submodule/MultilineTextField; sourceTree = SOURCE_ROOT; };
 		37837A4B233D4AA500A4DC18 /* EncoderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncoderView.swift; sourceTree = "<group>"; };
 		3788917F20F7DCD6004D9073 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
@@ -169,7 +164,6 @@
 		37AE827820FE164600EE07F0 /* Walrus */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Walrus; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AE827A20FE164600EE07F0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		37AE82852104D23A00EE07F0 /* EncoderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncoderViewController.swift; sourceTree = "<group>"; };
-		37AE82872104D80A00EE07F0 /* AppIcon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AppIcon.svg; sourceTree = "<group>"; };
 		37B406CF23E8D313008CA34A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		37B406D123E8D51F008CA34A /* DecoderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -230,7 +224,7 @@
 				37231797223BF7B7007617A8 /* CameraKit.xcodeproj */,
 				3788917F20F7DCD6004D9073 /* opencv2.framework */,
 			);
-			path = Frameworks;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		379E0C09216F253B004749CC /* MorseRelayDebugger */ = {
@@ -274,9 +268,6 @@
 		37AE42BB20F64B2F007FF05F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				376350D02115E105001E730D /* Launchscreen.svg */,
-				376350D22116CF3F001E730D /* Background.svg */,
-				37AE82872104D80A00EE07F0 /* AppIcon.svg */,
 				37AE42C320F64B30007FF05F /* Assets.xcassets */,
 				37AE42C520F64B30007FF05F /* LaunchScreen.storyboard */,
 				37AE42C820F64B30007FF05F /* Info.plist */,
@@ -287,6 +278,7 @@
 		37AE42CE20F64B4F007FF05F /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				37DDC6E423EA1E7C00152B27 /* View */,
 				37AE827320FDE5F400EE07F0 /* MorseEngine */,
 				3788918520F7E356004D9073 /* FrameProcessor.h */,
 				3788918620F7E356004D9073 /* FrameProcessor.mm */,
@@ -296,9 +288,6 @@
 				37AE42BC20F64B2F007FF05F /* AppDelegate.swift */,
 				37AE42BE20F64B2F007FF05F /* DecoderViewController.swift */,
 				37AE82852104D23A00EE07F0 /* EncoderViewController.swift */,
-				37837A4B233D4AA500A4DC18 /* EncoderView.swift */,
-				37B406CF23E8D313008CA34A /* ContentView.swift */,
-				37B406D123E8D51F008CA34A /* DecoderView.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -325,6 +314,16 @@
 				37AE827A20FE164600EE07F0 /* main.cpp */,
 			);
 			path = Walrus;
+			sourceTree = "<group>";
+		};
+		37DDC6E423EA1E7C00152B27 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				37837A4B233D4AA500A4DC18 /* EncoderView.swift */,
+				37B406CF23E8D313008CA34A /* ContentView.swift */,
+				37B406D123E8D51F008CA34A /* DecoderView.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,7 +395,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = nide;
 				TargetAttributes = {
 					379E0C07216F253B004749CC = {
@@ -486,9 +485,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37AE82882104D80A00EE07F0 /* AppIcon.svg in Resources */,
-				376350D12115E105001E730D /* Launchscreen.svg in Resources */,
-				376350D32116CF3F001E730D /* Background.svg in Resources */,
 				37AE42C720F64B30007FF05F /* LaunchScreen.storyboard in Resources */,
 				37AE42C420F64B30007FF05F /* Assets.xcassets in Resources */,
 			);
@@ -597,6 +593,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = C56P24GUF3;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -626,6 +623,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = C56P24GUF3;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -822,6 +820,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C56P24GUF3;
+				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -834,6 +833,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C56P24GUF3;
+				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
