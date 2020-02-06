@@ -18,6 +18,7 @@ struct DecoderView: View {
   var body: some View {
     ZStack {
       CameraView(cameraManager: cameraManager)
+      Image("HUDImage")
       VStack {
         HStack {
           Text(decodedText)

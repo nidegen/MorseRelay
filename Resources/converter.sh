@@ -16,7 +16,9 @@ addSvg2pngCommand () {
   OVERRIDE=$5
   echo "###########################################################################"
   echo "###########################################################################"
-    
+  
+  INKSCAPEV=$(inkscape --version | cut -c10-10)
+  
   for RESOLUTION in $RESOLUTIONS
   do
     echo "Converting to $RESOLUTION pixel resolution"
@@ -37,10 +39,18 @@ addSvg2pngCommand () {
       NEW_RES=$(echo "$RESOLUTION * $SCALE" | bc)
 
       if [[ "${OVERRIDE}" == "true" ]]; then
-        echo -f $INPUT_FILEPATH/$INPUT_FILENAME -e $DESTINATION -y 0 -w $NEW_RES >> commands.txt
+        if [[ "$INKSCAPEV" == "0" ]]; then
+          echo -f $INPUT_FILEPATH/$INPUT_FILENAME -e $DESTINATION -y 0 -w $NEW_RES >> commands.txt
+        else 
+          echo "$INPUT_FILEPATH/$INPUT_FILENAME export-filename:$DESTINATION; export-width:$NEW_RES; export-do" >> commands.txt
+        fi
       else
         if [ ! -f $DESTINATION ]; then
-          echo -f $INPUT_FILEPATH/$INPUT_FILENAME -e $DESTINATION -y 0 -w $NEW_RES >> commands.txt
+          if [[ "$INKSCAPEV" == "0" ]]; then
+            echo -f $INPUT_FILEPATH/$INPUT_FILENAME -e $DESTINATION -y 0 -w $NEW_RES >> commands.txt
+          else 
+            echo "$INPUT_FILEPATH/$INPUT_FILENAME export-filename:$DESTINATION; export-width:$NEW_RES; export-do" >> commands.txt
+          fi
         else
           echo "Not overriding existing file $DESTINATION"
         fi
