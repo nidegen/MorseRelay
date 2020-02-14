@@ -34,11 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window!.rootViewController = UIHostingController(rootView: ContentView())
     window!.makeKeyAndVisible()
     
-    let welcomeScreen = NDWelcomeViewController()
-    welcomeScreen.details.append((UIImage(named: "EmittIcon")!, "Text to Morse","Write a text to emitt using the torch"))
-    welcomeScreen.details.append((UIImage(named: "ReceiveIcon")!, "Morse to Text","Capture a emitted morse signal with the camera and display it as text"))
-    
-    welcomeScreen.presentIfNotSeen()
+//    let welcomeScreen = NDWelcomeViewController()
+//    welcomeScreen.details.append((UIImage(named: "EmittIcon")!, "Text to Morse","Write a text to emitt using the torch"))
+//    welcomeScreen.details.append((UIImage(named: "ReceiveIcon")!, "Morse to Text","Capture a emitted morse signal with the camera and display it as text"))
+//
+//    welcomeScreen.presentIfNotSeen()
     return true
   }
 }

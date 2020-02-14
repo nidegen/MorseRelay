@@ -18,9 +18,23 @@ struct ContentView: View {
     cameraManager.setupCamera()
     cameraManager.startCamera()
   }
+  
   var body: some View {
     TabView(selection: $selectedTab) {
+      Text("dfg").tabItem {
+        VStack {
+          Image(systemName:"camera")
+          Text("A")
+        }
+      }
+      Text("dsdf").tabItem {
+        VStack {
+          Image(systemName:"person")
+          Text("B")
+        }
+      }
       DecoderView(cameraManager: cameraManager).tag(0)
+      EncoderView().tag(1)
     }
     .edgesIgnoringSafeArea(.top)
   }
