@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import MultilineTextField
 
 struct EncoderView: View {
   @State var message: String = "" //create State
@@ -17,29 +18,39 @@ struct EncoderView: View {
     VStack {
       ZStack(alignment: .topLeading) {
         Color(red: 0.9, green: 0.9, blue: 0.9, opacity: 0.2)
-        TextField("Enter Text here..", text: $message).lineLimit(nil)
+        MultilineTextField(placeholderText: "Enter Text here..", text: $message).lineLimit(nil).padding()
       }.cornerRadius(10).padding()
       HStack {
-        Button(action: {
-          self.encoder.emitMorseMessage(self.message)
-        }) {
-          Text("Morse").frame(width: 150, height: 60, alignment: .center).background(Color.green).cornerRadius(10).foregroundColor(.white)
-        }
+        morseButton
         Spacer()
-        Button(action: {
-          self.encoder.cancelMorseEmission()
-        }) {
-          Text("Cancel").frame(width: 150, height: 60, alignment: .center).background(Color.red).cornerRadius(10).foregroundColor(.white)
-        }
+        cancelButton
       }.padding([.bottom, .trailing, .leading])
-    }.tabItem {
+    }
+    .tabItem {
       VStack {
         Image("EncoderItem")
         Text("Encode")
       }
-    }.background(Color.black.edgesIgnoringSafeArea(.all))
+    }
+    .background(Image("Background").edgesIgnoringSafeArea(.all))
     .navigationBarTitle("")
     .navigationBarHidden(true)
+  }
+  
+  var morseButton: some View {
+    Button(action: {
+      self.encoder.emitMorseMessage(self.message)
+    }) {
+      Text("Morse").frame(width: 150, height: 60, alignment: .center).background(Color.green).cornerRadius(10).foregroundColor(.white)
+    }
+  }
+  
+  var cancelButton: some View {
+    Button(action: {
+      self.encoder.cancelMorseEmission()
+    }) {
+      Text("Cancel").frame(width: 150, height: 60, alignment: .center).background(Color.red).cornerRadius(10).foregroundColor(.white)
+    }
   }
 }
 

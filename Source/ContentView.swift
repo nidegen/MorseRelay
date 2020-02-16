@@ -12,28 +12,21 @@ import CameraKit
 
 struct ContentView: View {
   var cameraManager = CameraManager()
+  var frameProcessor = FrameProcessor()
+  
   @State var selectedTab = 0
+  @ObservedObject var frameProcessorObserver: FrameProcessorObserver
   
   init() {
-    cameraManager.setupCamera()
-    cameraManager.startCamera()
+    self.cameraManager.setupCamera()
+    self.cameraManager.startCamera()
+    self.cameraManager.sampleBufferOutputDelegate = self.frameProcessor
+    frameProcessorObserver = FrameProcessorObserver(frameProcessor: self.frameProcessor)
   }
   
   var body: some View {
     TabView(selection: $selectedTab) {
-      Text("dfg").tabItem {
-        VStack {
-          Image(systemName:"camera")
-          Text("A")
-        }
-      }
-      Text("dsdf").tabItem {
-        VStack {
-          Image(systemName:"person")
-          Text("B")
-        }
-      }
-      DecoderView(cameraManager: cameraManager).tag(0)
+      DecoderView(decodedText: $frameProcessorObserver.currentText, isProcessing: $frameProcessorObserver.isProcessing, currentSignalState: $frameProcessorObserver.currentSignalState, cameraManager: CameraManager()).tag(0)
       EncoderView().tag(1)
     }
     .edgesIgnoringSafeArea(.top)

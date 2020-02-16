@@ -11,6 +11,7 @@
 		372317AE223BF7EE007617A8 /* NDKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 372317A6223BF7C3007617A8 /* NDKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		372317B2223BF7F5007617A8 /* CameraKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3723179D223BF7B7007617A8 /* CameraKit.framework */; };
 		372317B3223BF7F5007617A8 /* CameraKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3723179D223BF7B7007617A8 /* CameraKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3749933B23F93A6600C7843A /* FrameProcessorObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3749933A23F93A6600C7843A /* FrameProcessorObserver.swift */; };
 		37831CF02391C93100AF980E /* MultilineTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 37831CEF2391C93100AF980E /* MultilineTextField */; };
 		37837A4C233D4AA500A4DC18 /* EncoderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37837A4B233D4AA500A4DC18 /* EncoderView.swift */; };
 		3788918720F7E356004D9073 /* FrameProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3788918620F7E356004D9073 /* FrameProcessor.mm */; };
@@ -28,7 +29,6 @@
 		379E0C22216F282A004749CC /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3788917F20F7DCD6004D9073 /* opencv2.framework */; };
 		379E0C24216F8CE9004749CC /* NSEncoderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379E0C23216F8CE9004749CC /* NSEncoderViewController.swift */; };
 		37AE42BD20F64B2F007FF05F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE42BC20F64B2F007FF05F /* AppDelegate.swift */; };
-		37AE42BF20F64B2F007FF05F /* DecoderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE42BE20F64B2F007FF05F /* DecoderViewController.swift */; };
 		37AE42C420F64B30007FF05F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37AE42C320F64B30007FF05F /* Assets.xcassets */; };
 		37AE42C720F64B30007FF05F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AE42C520F64B30007FF05F /* LaunchScreen.storyboard */; };
 		37AE826620F8B19C00EE07F0 /* MorseDecoder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826420F8B19C00EE07F0 /* MorseDecoder.cc */; };
@@ -40,9 +40,9 @@
 		37AE827F20FE178600EE07F0 /* MorseMapper.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826720F8B1B800EE07F0 /* MorseMapper.cc */; };
 		37AE828020FE178C00EE07F0 /* MorseEncoder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826A20F8D21300EE07F0 /* MorseEncoder.cc */; };
 		37AE828120FE179300EE07F0 /* MorseDecoder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826420F8B19C00EE07F0 /* MorseDecoder.cc */; };
-		37AE82862104D23A00EE07F0 /* EncoderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE82852104D23A00EE07F0 /* EncoderViewController.swift */; };
 		37B406D023E8D313008CA34A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B406CF23E8D313008CA34A /* ContentView.swift */; };
 		37B406D223E8D51F008CA34A /* DecoderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B406D123E8D51F008CA34A /* DecoderView.swift */; };
+		37C5022623F7378B007F9E12 /* SwiftUIBlurView in Frameworks */ = {isa = PBXBuildFile; productRef = 37C5022523F7378B007F9E12 /* SwiftUIBlurView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +131,7 @@
 /* Begin PBXFileReference section */
 		37231797223BF7B7007617A8 /* CameraKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CameraKit.xcodeproj; path = Submodule/CameraKit/CameraKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		372317A0223BF7C3007617A8 /* NDKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NDKit.xcodeproj; path = Submodule/NDKit/NDKit.xcodeproj; sourceTree = SOURCE_ROOT; };
+		3749933A23F93A6600C7843A /* FrameProcessorObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameProcessorObserver.swift; sourceTree = "<group>"; };
 		37831CEC2391C91900AF980E /* MultilineTextField */ = {isa = PBXFileReference; lastKnownFileType = text; name = MultilineTextField; path = Submodule/MultilineTextField; sourceTree = SOURCE_ROOT; };
 		37837A4B233D4AA500A4DC18 /* EncoderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncoderView.swift; sourceTree = "<group>"; };
 		3788917F20F7DCD6004D9073 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = Frameworks/opencv2.framework; sourceTree = "<group>"; };
@@ -147,7 +148,6 @@
 		379E0C23216F8CE9004749CC /* NSEncoderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSEncoderViewController.swift; sourceTree = "<group>"; };
 		37AE42B920F64B2F007FF05F /* MorseRelay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorseRelay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AE42BC20F64B2F007FF05F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		37AE42BE20F64B2F007FF05F /* DecoderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderViewController.swift; sourceTree = "<group>"; };
 		37AE42C320F64B30007FF05F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37AE42C620F64B30007FF05F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37AE42C820F64B30007FF05F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -163,7 +163,6 @@
 		37AE827120FB8D9200EE07F0 /* FlashTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashTracker.h; sourceTree = "<group>"; };
 		37AE827820FE164600EE07F0 /* Walrus */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Walrus; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AE827A20FE164600EE07F0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		37AE82852104D23A00EE07F0 /* EncoderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncoderViewController.swift; sourceTree = "<group>"; };
 		37B406CF23E8D313008CA34A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		37B406D123E8D51F008CA34A /* DecoderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37C5022623F7378B007F9E12 /* SwiftUIBlurView in Frameworks */,
 				372317B2223BF7F5007617A8 /* CameraKit.framework in Frameworks */,
 				3788918820F7E4DD004D9073 /* opencv2.framework in Frameworks */,
 				37831CF02391C93100AF980E /* MultilineTextField in Frameworks */,
@@ -286,8 +286,7 @@
 				37AE826E20F9FB4200EE07F0 /* FlashlightEncoder.mm */,
 				3788918420F7E356004D9073 /* MorseRelay-Bridging-Header.h */,
 				37AE42BC20F64B2F007FF05F /* AppDelegate.swift */,
-				37AE42BE20F64B2F007FF05F /* DecoderViewController.swift */,
-				37AE82852104D23A00EE07F0 /* EncoderViewController.swift */,
+				3749933A23F93A6600C7843A /* FrameProcessorObserver.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -366,6 +365,7 @@
 			name = MorseRelay;
 			packageProductDependencies = (
 				37831CEF2391C93100AF980E /* MultilineTextField */,
+				37C5022523F7378B007F9E12 /* SwiftUIBlurView */,
 			);
 			productName = MorseRelay;
 			productReference = 37AE42B920F64B2F007FF05F /* MorseRelay.app */;
@@ -419,6 +419,9 @@
 				Base,
 			);
 			mainGroup = 37AE42B020F64B2F007FF05F;
+			packageReferences = (
+				37C5022423F7378B007F9E12 /* XCRemoteSwiftPackageReference "SwiftUIBlurView" */,
+			);
 			productRefGroup = 37AE42BA20F64B2F007FF05F /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -513,7 +516,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37AE42BF20F64B2F007FF05F /* DecoderViewController.swift in Sources */,
 				37B406D023E8D313008CA34A /* ContentView.swift in Sources */,
 				37AE42BD20F64B2F007FF05F /* AppDelegate.swift in Sources */,
 				37AE827220FB8D9200EE07F0 /* FlashTracker.cc in Sources */,
@@ -521,9 +523,9 @@
 				37AE826620F8B19C00EE07F0 /* MorseDecoder.cc in Sources */,
 				3788918720F7E356004D9073 /* FrameProcessor.mm in Sources */,
 				37AE826C20F8D21300EE07F0 /* MorseEncoder.cc in Sources */,
+				3749933B23F93A6600C7843A /* FrameProcessorObserver.swift in Sources */,
 				37AE826F20F9FB4200EE07F0 /* FlashlightEncoder.mm in Sources */,
 				37B406D223E8D51F008CA34A /* DecoderView.swift in Sources */,
-				37AE82862104D23A00EE07F0 /* EncoderViewController.swift in Sources */,
 				37837A4C233D4AA500A4DC18 /* EncoderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -885,10 +887,26 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		37C5022423F7378B007F9E12 /* XCRemoteSwiftPackageReference "SwiftUIBlurView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielsaidi/SwiftUIBlurView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		37831CEF2391C93100AF980E /* MultilineTextField */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MultilineTextField;
+		};
+		37C5022523F7378B007F9E12 /* SwiftUIBlurView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37C5022423F7378B007F9E12 /* XCRemoteSwiftPackageReference "SwiftUIBlurView" */;
+			productName = SwiftUIBlurView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
