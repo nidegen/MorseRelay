@@ -20,8 +20,8 @@ typedef std::vector<bool> MorseGlyph;
 typedef std::unordered_map<std::string, MorseGlyph> SymbolToMorseGlyphMap;
 typedef std::unordered_map<MorseGlyph, std::string> MorseGlyphToSymbolMap;
 
-static constexpr bool kDahSymbol = true;
-static constexpr bool kDitSymbol = false;
+static bool kDahSymbol = true;
+static bool kDitSymbol = false;
 
 enum class MorseUnit {
   kDah,
@@ -31,11 +31,11 @@ enum class MorseUnit {
   kWordSeparator
 };
 
-static constexpr float kDitDuration = 0.2;
-static constexpr float kDahDuration = 3 * kDitDuration;
-static constexpr float kIntervalDuration = kDitDuration;
-static constexpr float kCharSeparationDuration = kDahDuration;
-static constexpr float kWordSeparationDuration = 7 * kDitDuration;
+static float kDitDuration = 0.2;
+static float kDahDuration = 3 * kDitDuration;
+static float kIntervalDuration = kDitDuration;
+static float kCharSeparationDuration = kDahDuration;
+static float kWordSeparationDuration = 7 * kDitDuration;
 
 class MorseMapper {
  public:

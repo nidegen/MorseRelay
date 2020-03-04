@@ -6,7 +6,7 @@
 //  Copyright © 2018 nide. All rights reserved.
 //
 
-#include "MorseMapper.h"
+#include "MorseKit/MorseMapper.h"
 
 /* static */
 const SymbolToMorseGlyphMap MorseMapper::kSymbolToGlyph {

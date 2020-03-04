@@ -6,7 +6,7 @@
 //  Copyright © 2018 nide. All rights reserved.
 //
 
-#include "MorseDecoder.h"
+#include "MorseKit/MorseDecoder.h"
 
 MorseDecoder::MorseDecoder() {
   this->reset();

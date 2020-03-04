@@ -6,7 +6,7 @@
 //  Copyright © 2018 nide. All rights reserved.
 //
 
-#include "MorseEncoder.h"
+#include "MorseKit/MorseEncoder.h"
 
 #include <future>
 

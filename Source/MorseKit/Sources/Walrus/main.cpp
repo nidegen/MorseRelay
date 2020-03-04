@@ -9,9 +9,9 @@
 #include <iostream>
 #include "chrono"
 
-#include "MorseDecoder.h"
-#include "MorseEncoder.h"
-#include "MorseMapper.h"
+#include "MorseKit/MorseDecoder.h"
+#include "MorseKit/MorseEncoder.h"
+#include "MorseKit/MorseMapper.h"
 
 int main(int argc, const char * argv[]) {
   MorseEncoder morse_encoder_cli([](bool signal_on) {

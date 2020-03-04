@@ -6,7 +6,7 @@
 //  Copyright © 2018 nide. All rights reserved.
 //
 
-#include "FlashTracker.h"
+#include "MorseKit/FlashTracker.h"
 
 float getAverageLuminance(const cv::Mat& frame) {
   cv::Scalar average = cv::mean(frame);
