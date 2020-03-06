@@ -18,7 +18,7 @@
 
 @interface FrameProcessor() {
   std::function<void(bool)> _signalChangedCallback;
-  MorseDecoder _morseDecoder;
+  Morse::Decoder _morseDecoder;
 }
 
 @property bool previousFrameHadFlash;
@@ -93,7 +93,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 //  UIImage* image_rgb = MatToUIImage(frame_image_rgb);
   float luminanceDelta = FlashTracker::processFrame(frame_image_rgb);
   if (!_previousFrameHadFlash && luminanceDelta > 1.3) {
-    _morseDecoder.signalEvent(SignalEvent::kMorseSignalStart);
+    _morseDecoder.signalEvent(Morse::SignalEvent::kStart);
     _previousFrameHadFlash = true;
     if (_signalChangedCallback)
       _signalChangedCallback(true);
@@ -101,7 +101,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     _previousFrameHadFlash = false;
     if (_signalChangedCallback)
       _signalChangedCallback(false);
-    _morseDecoder.signalEvent(SignalEvent::kMorseSignalEnd);
+    _morseDecoder.signalEvent(Morse::SignalEvent::kEnd);
   }
   CVPixelBufferUnlockBaseAddress(pixelBuffer, kCVPixelBufferLock_ReadOnly);
 }

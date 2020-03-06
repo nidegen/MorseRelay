@@ -10,10 +10,10 @@
 
 #import <AVKit/AVKit.h>
 
-#include "MorseEncoder.h"
+#include "Morse/Encoder.h"
 
 @interface FlashlightEncoder () {
-  MorseEncoder* _morseEncoder;
+  Morse::Encoder* _morseEncoder;
 }
 // Cannot use objc property as it has no copy constructor due to std::thread
 @property AVCaptureDevice *torchDevice;
@@ -24,7 +24,7 @@
   _torchDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
   _deviceHasTorch = [_torchDevice hasTorch];
   
-  _morseEncoder = new MorseEncoder([self](bool turnOn) {
+  _morseEncoder = new Morse::Encoder([self](bool turnOn) {
     if (_deviceHasTorch) {
       [_torchDevice lockForConfiguration:nil];
       if (turnOn) {

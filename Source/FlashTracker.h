@@ -14,7 +14,7 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 
-#include "MorseDecoder.h"
+#include "Morse/Decoder.h"
 
 class FlashTracker {
  public:

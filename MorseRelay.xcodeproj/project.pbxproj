@@ -7,12 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		372317AD223BF7EE007617A8 /* NDKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372317A6223BF7C3007617A8 /* NDKit.framework */; };
-		372317AE223BF7EE007617A8 /* NDKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 372317A6223BF7C3007617A8 /* NDKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		372317B2223BF7F5007617A8 /* CameraKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3723179D223BF7B7007617A8 /* CameraKit.framework */; };
-		372317B3223BF7F5007617A8 /* CameraKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3723179D223BF7B7007617A8 /* CameraKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3749933B23F93A6600C7843A /* FrameProcessorObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3749933A23F93A6600C7843A /* FrameProcessorObserver.swift */; };
-		37831CF02391C93100AF980E /* MultilineTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 37831CEF2391C93100AF980E /* MultilineTextField */; };
 		37837A4C233D4AA500A4DC18 /* EncoderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37837A4B233D4AA500A4DC18 /* EncoderView.swift */; };
 		3788918720F7E356004D9073 /* FrameProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3788918620F7E356004D9073 /* FrameProcessor.mm */; };
 		3788918820F7E4DD004D9073 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3788917F20F7DCD6004D9073 /* opencv2.framework */; };
@@ -22,87 +17,21 @@
 		379E0C12216F253C004749CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379E0C10216F253C004749CC /* Main.storyboard */; };
 		379E0C19216F257D004749CC /* FlashlightEncoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826E20F9FB4200EE07F0 /* FlashlightEncoder.mm */; };
 		379E0C1A216F2594004749CC /* FrameProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3788918620F7E356004D9073 /* FrameProcessor.mm */; };
-		379E0C1B216F25A1004749CC /* MorseDecoder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826420F8B19C00EE07F0 /* MorseDecoder.cc */; };
-		379E0C1C216F25A4004749CC /* FlashTracker.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37AE827020FB8D9200EE07F0 /* FlashTracker.cc */; };
-		379E0C1D216F25A7004749CC /* MorseEncoder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826A20F8D21300EE07F0 /* MorseEncoder.cc */; };
-		379E0C1E216F25AA004749CC /* MorseMapper.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826720F8B1B800EE07F0 /* MorseMapper.cc */; };
 		379E0C22216F282A004749CC /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3788917F20F7DCD6004D9073 /* opencv2.framework */; };
 		379E0C24216F8CE9004749CC /* NSEncoderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379E0C23216F8CE9004749CC /* NSEncoderViewController.swift */; };
 		37AE42BD20F64B2F007FF05F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE42BC20F64B2F007FF05F /* AppDelegate.swift */; };
 		37AE42C420F64B30007FF05F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37AE42C320F64B30007FF05F /* Assets.xcassets */; };
 		37AE42C720F64B30007FF05F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AE42C520F64B30007FF05F /* LaunchScreen.storyboard */; };
-		37AE826620F8B19C00EE07F0 /* MorseDecoder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826420F8B19C00EE07F0 /* MorseDecoder.cc */; };
-		37AE826920F8B1B800EE07F0 /* MorseMapper.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826720F8B1B800EE07F0 /* MorseMapper.cc */; };
-		37AE826C20F8D21300EE07F0 /* MorseEncoder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826A20F8D21300EE07F0 /* MorseEncoder.cc */; };
 		37AE826F20F9FB4200EE07F0 /* FlashlightEncoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826E20F9FB4200EE07F0 /* FlashlightEncoder.mm */; };
-		37AE827220FB8D9200EE07F0 /* FlashTracker.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37AE827020FB8D9200EE07F0 /* FlashTracker.cc */; };
-		37AE827B20FE164600EE07F0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37AE827A20FE164600EE07F0 /* main.cpp */; };
-		37AE827F20FE178600EE07F0 /* MorseMapper.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826720F8B1B800EE07F0 /* MorseMapper.cc */; };
-		37AE828020FE178C00EE07F0 /* MorseEncoder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826A20F8D21300EE07F0 /* MorseEncoder.cc */; };
-		37AE828120FE179300EE07F0 /* MorseDecoder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37AE826420F8B19C00EE07F0 /* MorseDecoder.cc */; };
 		37B406D023E8D313008CA34A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B406CF23E8D313008CA34A /* ContentView.swift */; };
 		37B406D223E8D51F008CA34A /* DecoderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B406D123E8D51F008CA34A /* DecoderView.swift */; };
 		37C5022623F7378B007F9E12 /* SwiftUIBlurView in Frameworks */ = {isa = PBXBuildFile; productRef = 37C5022523F7378B007F9E12 /* SwiftUIBlurView */; };
+		37FD2F812412287700C1501C /* FlashTracker.cc in Sources */ = {isa = PBXBuildFile; fileRef = 37FD2F802412287700C1501C /* FlashTracker.cc */; };
+		37FD2FD62412420A00C1501C /* libMorse in Frameworks */ = {isa = PBXBuildFile; productRef = 37FD2FD52412420A00C1501C /* libMorse */; };
+		37FD2FDF2412447A00C1501C /* CameraKit in Frameworks */ = {isa = PBXBuildFile; productRef = 37FD2FDE2412447A00C1501C /* CameraKit */; };
+		37FD2FE2241244BD00C1501C /* MultilineTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 37FD2FE1241244BD00C1501C /* MultilineTextField */; };
+		37FD2FE5241244E900C1501C /* NDKit in Frameworks */ = {isa = PBXBuildFile; productRef = 37FD2FE4241244E900C1501C /* NDKit */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		3723179C223BF7B7007617A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37231797223BF7B7007617A8 /* CameraKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 29E43B652180EEE2008BFDD0;
-			remoteInfo = CameraKit;
-		};
-		3723179E223BF7B7007617A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37231797223BF7B7007617A8 /* CameraKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 29FC5028222BD9F6004DC389;
-			remoteInfo = Example;
-		};
-		372317A5223BF7C3007617A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 372317A0223BF7C3007617A8 /* NDKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 29ED7B0221E9F21F0094D65D;
-			remoteInfo = NDKit;
-		};
-		372317A7223BF7C3007617A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 372317A0223BF7C3007617A8 /* NDKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 29591279221720F40011EC2E;
-			remoteInfo = NiDemo;
-		};
-		372317A9223BF7CE007617A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 372317A0223BF7C3007617A8 /* NDKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 29ED7B0121E9F21F0094D65D;
-			remoteInfo = NDKit;
-		};
-		372317AB223BF7CE007617A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37231797223BF7B7007617A8 /* CameraKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 29E43B642180EEE2008BFDD0;
-			remoteInfo = CameraKit;
-		};
-		372317AF223BF7EE007617A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 372317A0223BF7C3007617A8 /* NDKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 29ED7B0121E9F21F0094D65D;
-			remoteInfo = NDKit;
-		};
-		372317B4223BF7F5007617A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37231797223BF7B7007617A8 /* CameraKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 29E43B642180EEE2008BFDD0;
-			remoteInfo = CameraKit;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		372317B1223BF7EE007617A8 /* Embed Frameworks */ = {
@@ -111,28 +40,14 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				372317B3223BF7F5007617A8 /* CameraKit.framework in Embed Frameworks */,
-				372317AE223BF7EE007617A8 /* NDKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		37AE827620FE164600EE07F0 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		37231797223BF7B7007617A8 /* CameraKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CameraKit.xcodeproj; path = Submodule/CameraKit/CameraKit.xcodeproj; sourceTree = SOURCE_ROOT; };
-		372317A0223BF7C3007617A8 /* NDKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NDKit.xcodeproj; path = Submodule/NDKit/NDKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		3749933A23F93A6600C7843A /* FrameProcessorObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameProcessorObserver.swift; sourceTree = "<group>"; };
-		37831CEC2391C91900AF980E /* MultilineTextField */ = {isa = PBXFileReference; lastKnownFileType = text; name = MultilineTextField; path = Submodule/MultilineTextField; sourceTree = SOURCE_ROOT; };
 		37837A4B233D4AA500A4DC18 /* EncoderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncoderView.swift; sourceTree = "<group>"; };
 		3788917F20F7DCD6004D9073 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = Frameworks/opencv2.framework; sourceTree = "<group>"; };
 		3788918420F7E356004D9073 /* MorseRelay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MorseRelay-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -151,20 +66,12 @@
 		37AE42C320F64B30007FF05F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37AE42C620F64B30007FF05F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37AE42C820F64B30007FF05F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		37AE826420F8B19C00EE07F0 /* MorseDecoder.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MorseDecoder.cc; sourceTree = "<group>"; };
-		37AE826520F8B19C00EE07F0 /* MorseDecoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MorseDecoder.h; sourceTree = "<group>"; };
-		37AE826720F8B1B800EE07F0 /* MorseMapper.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MorseMapper.cc; sourceTree = "<group>"; };
-		37AE826820F8B1B800EE07F0 /* MorseMapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MorseMapper.h; sourceTree = "<group>"; };
-		37AE826A20F8D21300EE07F0 /* MorseEncoder.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MorseEncoder.cc; sourceTree = "<group>"; };
-		37AE826B20F8D21300EE07F0 /* MorseEncoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MorseEncoder.h; sourceTree = "<group>"; };
 		37AE826D20F9FB4200EE07F0 /* FlashlightEncoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashlightEncoder.h; sourceTree = "<group>"; };
 		37AE826E20F9FB4200EE07F0 /* FlashlightEncoder.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FlashlightEncoder.mm; sourceTree = "<group>"; };
-		37AE827020FB8D9200EE07F0 /* FlashTracker.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FlashTracker.cc; sourceTree = "<group>"; };
-		37AE827120FB8D9200EE07F0 /* FlashTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashTracker.h; sourceTree = "<group>"; };
-		37AE827820FE164600EE07F0 /* Walrus */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Walrus; sourceTree = BUILT_PRODUCTS_DIR; };
-		37AE827A20FE164600EE07F0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		37B406CF23E8D313008CA34A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		37B406D123E8D51F008CA34A /* DecoderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderView.swift; sourceTree = "<group>"; };
+		37FD2F7F2412287700C1501C /* FlashTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashTracker.h; sourceTree = "<group>"; };
+		37FD2F802412287700C1501C /* FlashTracker.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FlashTracker.cc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,48 +87,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37FD2FE2241244BD00C1501C /* MultilineTextField in Frameworks */,
 				37C5022623F7378B007F9E12 /* SwiftUIBlurView in Frameworks */,
-				372317B2223BF7F5007617A8 /* CameraKit.framework in Frameworks */,
+				37FD2FE5241244E900C1501C /* NDKit in Frameworks */,
 				3788918820F7E4DD004D9073 /* opencv2.framework in Frameworks */,
-				37831CF02391C93100AF980E /* MultilineTextField in Frameworks */,
-				372317AD223BF7EE007617A8 /* NDKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		37AE827520FE164600EE07F0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				37FD2FDF2412447A00C1501C /* CameraKit in Frameworks */,
+				37FD2FD62412420A00C1501C /* libMorse in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		37231798223BF7B7007617A8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3723179D223BF7B7007617A8 /* CameraKit.framework */,
-				3723179F223BF7B7007617A8 /* Example.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		372317A1223BF7C3007617A8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				372317A6223BF7C3007617A8 /* NDKit.framework */,
-				372317A8223BF7C3007617A8 /* NiDemo.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		3788917E20F7DCD6004D9073 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				37831CEC2391C91900AF980E /* MultilineTextField */,
-				372317A0223BF7C3007617A8 /* NDKit.xcodeproj */,
-				37231797223BF7B7007617A8 /* CameraKit.xcodeproj */,
 				3788917F20F7DCD6004D9073 /* opencv2.framework */,
 			);
 			name = Frameworks;
@@ -259,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				37AE42B920F64B2F007FF05F /* MorseRelay.app */,
-				37AE827820FE164600EE07F0 /* Walrus */,
 				379E0C08216F253B004749CC /* MorseRelayDebugger.app */,
 			);
 			name = Products;
@@ -278,8 +157,9 @@
 		37AE42CE20F64B4F007FF05F /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				37FD2F802412287700C1501C /* FlashTracker.cc */,
+				37FD2F7F2412287700C1501C /* FlashTracker.h */,
 				37DDC6E423EA1E7C00152B27 /* View */,
-				37AE827320FDE5F400EE07F0 /* MorseEngine */,
 				3788918520F7E356004D9073 /* FrameProcessor.h */,
 				3788918620F7E356004D9073 /* FrameProcessor.mm */,
 				37AE826D20F9FB4200EE07F0 /* FlashlightEncoder.h */,
@@ -289,30 +169,6 @@
 				3749933A23F93A6600C7843A /* FrameProcessorObserver.swift */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		37AE827320FDE5F400EE07F0 /* MorseEngine */ = {
-			isa = PBXGroup;
-			children = (
-				37AE827920FE164600EE07F0 /* Walrus */,
-				37AE826520F8B19C00EE07F0 /* MorseDecoder.h */,
-				37AE826420F8B19C00EE07F0 /* MorseDecoder.cc */,
-				37AE827120FB8D9200EE07F0 /* FlashTracker.h */,
-				37AE827020FB8D9200EE07F0 /* FlashTracker.cc */,
-				37AE826B20F8D21300EE07F0 /* MorseEncoder.h */,
-				37AE826A20F8D21300EE07F0 /* MorseEncoder.cc */,
-				37AE826820F8B1B800EE07F0 /* MorseMapper.h */,
-				37AE826720F8B1B800EE07F0 /* MorseMapper.cc */,
-			);
-			path = MorseEngine;
-			sourceTree = "<group>";
-		};
-		37AE827920FE164600EE07F0 /* Walrus */ = {
-			isa = PBXGroup;
-			children = (
-				37AE827A20FE164600EE07F0 /* main.cpp */,
-			);
-			path = Walrus;
 			sourceTree = "<group>";
 		};
 		37DDC6E423EA1E7C00152B27 /* View */ = {
@@ -357,36 +213,18 @@
 			buildRules = (
 			);
 			dependencies = (
-				372317AA223BF7CE007617A8 /* PBXTargetDependency */,
-				372317AC223BF7CE007617A8 /* PBXTargetDependency */,
-				372317B0223BF7EE007617A8 /* PBXTargetDependency */,
-				372317B5223BF7F5007617A8 /* PBXTargetDependency */,
 			);
 			name = MorseRelay;
 			packageProductDependencies = (
-				37831CEF2391C93100AF980E /* MultilineTextField */,
 				37C5022523F7378B007F9E12 /* SwiftUIBlurView */,
+				37FD2FD52412420A00C1501C /* libMorse */,
+				37FD2FDE2412447A00C1501C /* CameraKit */,
+				37FD2FE1241244BD00C1501C /* MultilineTextField */,
+				37FD2FE4241244E900C1501C /* NDKit */,
 			);
 			productName = MorseRelay;
 			productReference = 37AE42B920F64B2F007FF05F /* MorseRelay.app */;
 			productType = "com.apple.product-type.application";
-		};
-		37AE827720FE164600EE07F0 /* Walrus */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 37AE827C20FE164600EE07F0 /* Build configuration list for PBXNativeTarget "Walrus" */;
-			buildPhases = (
-				37AE827420FE164600EE07F0 /* Sources */,
-				37AE827520FE164600EE07F0 /* Frameworks */,
-				37AE827620FE164600EE07F0 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Walrus;
-			productName = Walrus;
-			productReference = 37AE827820FE164600EE07F0 /* Walrus */;
-			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
@@ -405,9 +243,6 @@
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1030;
 					};
-					37AE827720FE164600EE07F0 = {
-						CreatedOnToolsVersion = 9.4.1;
-					};
 				};
 			};
 			buildConfigurationList = 37AE42B420F64B2F007FF05F /* Build configuration list for PBXProject "MorseRelay" */;
@@ -421,58 +256,20 @@
 			mainGroup = 37AE42B020F64B2F007FF05F;
 			packageReferences = (
 				37C5022423F7378B007F9E12 /* XCRemoteSwiftPackageReference "SwiftUIBlurView" */,
+				37FD2FCE24123F9900C1501C /* XCRemoteSwiftPackageReference "MorseKit" */,
+				37FD2FDD2412447A00C1501C /* XCRemoteSwiftPackageReference "CameraKit" */,
+				37FD2FE0241244BD00C1501C /* XCRemoteSwiftPackageReference "MultilineTextField" */,
+				37FD2FE3241244E900C1501C /* XCRemoteSwiftPackageReference "NDKit" */,
 			);
 			productRefGroup = 37AE42BA20F64B2F007FF05F /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 37231798223BF7B7007617A8 /* Products */;
-					ProjectRef = 37231797223BF7B7007617A8 /* CameraKit.xcodeproj */;
-				},
-				{
-					ProductGroup = 372317A1223BF7C3007617A8 /* Products */;
-					ProjectRef = 372317A0223BF7C3007617A8 /* NDKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				37AE42B820F64B2F007FF05F /* MorseRelay */,
-				37AE827720FE164600EE07F0 /* Walrus */,
 				379E0C07216F253B004749CC /* MorseRelayDebugger */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		3723179D223BF7B7007617A8 /* CameraKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CameraKit.framework;
-			remoteRef = 3723179C223BF7B7007617A8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3723179F223BF7B7007617A8 /* Example.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = Example.app;
-			remoteRef = 3723179E223BF7B7007617A8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		372317A6223BF7C3007617A8 /* NDKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = NDKit.framework;
-			remoteRef = 372317A5223BF7C3007617A8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		372317A8223BF7C3007617A8 /* NiDemo.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = NiDemo.app;
-			remoteRef = 372317A7223BF7C3007617A8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		379E0C06216F253B004749CC /* Resources */ = {
@@ -501,12 +298,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				379E0C0D216F253B004749CC /* NSDecoderViewController.swift in Sources */,
-				379E0C1D216F25A7004749CC /* MorseEncoder.cc in Sources */,
-				379E0C1B216F25A1004749CC /* MorseDecoder.cc in Sources */,
 				379E0C19216F257D004749CC /* FlashlightEncoder.mm in Sources */,
-				379E0C1C216F25A4004749CC /* FlashTracker.cc in Sources */,
 				379E0C0B216F253B004749CC /* AppDelegate.swift in Sources */,
-				379E0C1E216F25AA004749CC /* MorseMapper.cc in Sources */,
 				379E0C1A216F2594004749CC /* FrameProcessor.mm in Sources */,
 				379E0C24216F8CE9004749CC /* NSEncoderViewController.swift in Sources */,
 			);
@@ -518,53 +311,16 @@
 			files = (
 				37B406D023E8D313008CA34A /* ContentView.swift in Sources */,
 				37AE42BD20F64B2F007FF05F /* AppDelegate.swift in Sources */,
-				37AE827220FB8D9200EE07F0 /* FlashTracker.cc in Sources */,
-				37AE826920F8B1B800EE07F0 /* MorseMapper.cc in Sources */,
-				37AE826620F8B19C00EE07F0 /* MorseDecoder.cc in Sources */,
 				3788918720F7E356004D9073 /* FrameProcessor.mm in Sources */,
-				37AE826C20F8D21300EE07F0 /* MorseEncoder.cc in Sources */,
 				3749933B23F93A6600C7843A /* FrameProcessorObserver.swift in Sources */,
 				37AE826F20F9FB4200EE07F0 /* FlashlightEncoder.mm in Sources */,
+				37FD2F812412287700C1501C /* FlashTracker.cc in Sources */,
 				37B406D223E8D51F008CA34A /* DecoderView.swift in Sources */,
 				37837A4C233D4AA500A4DC18 /* EncoderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		37AE827420FE164600EE07F0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				37AE827B20FE164600EE07F0 /* main.cpp in Sources */,
-				37AE828020FE178C00EE07F0 /* MorseEncoder.cc in Sources */,
-				37AE827F20FE178600EE07F0 /* MorseMapper.cc in Sources */,
-				37AE828120FE179300EE07F0 /* MorseDecoder.cc in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		372317AA223BF7CE007617A8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = NDKit;
-			targetProxy = 372317A9223BF7CE007617A8 /* PBXContainerItemProxy */;
-		};
-		372317AC223BF7CE007617A8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CameraKit;
-			targetProxy = 372317AB223BF7CE007617A8 /* PBXContainerItemProxy */;
-		};
-		372317B0223BF7EE007617A8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = NDKit;
-			targetProxy = 372317AF223BF7EE007617A8 /* PBXContainerItemProxy */;
-		};
-		372317B5223BF7F5007617A8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CameraKit;
-			targetProxy = 372317B4223BF7F5007617A8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		379E0C10216F253C004749CC /* Main.storyboard */ = {
@@ -820,32 +576,6 @@
 			};
 			name = Release;
 		};
-		37AE827D20FE164600EE07F0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C56P24GUF3;
-				ENABLE_HARDENED_RUNTIME = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		37AE827E20FE164600EE07F0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C56P24GUF3;
-				ENABLE_HARDENED_RUNTIME = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -876,15 +606,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		37AE827C20FE164600EE07F0 /* Build configuration list for PBXNativeTarget "Walrus" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				37AE827D20FE164600EE07F0 /* Debug */,
-				37AE827E20FE164600EE07F0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -896,17 +617,65 @@
 				minimumVersion = 0.2.0;
 			};
 		};
+		37FD2FCE24123F9900C1501C /* XCRemoteSwiftPackageReference "MorseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:nidegen/MorseKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		37FD2FDD2412447A00C1501C /* XCRemoteSwiftPackageReference "CameraKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:nidegen/CameraKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		37FD2FE0241244BD00C1501C /* XCRemoteSwiftPackageReference "MultilineTextField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:nidegen/MultilineTextField.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		37FD2FE3241244E900C1501C /* XCRemoteSwiftPackageReference "NDKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:nidegen/NDKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		37831CEF2391C93100AF980E /* MultilineTextField */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = MultilineTextField;
-		};
 		37C5022523F7378B007F9E12 /* SwiftUIBlurView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 37C5022423F7378B007F9E12 /* XCRemoteSwiftPackageReference "SwiftUIBlurView" */;
 			productName = SwiftUIBlurView;
+		};
+		37FD2FD52412420A00C1501C /* libMorse */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37FD2FCE24123F9900C1501C /* XCRemoteSwiftPackageReference "MorseKit" */;
+			productName = libMorse;
+		};
+		37FD2FDE2412447A00C1501C /* CameraKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37FD2FDD2412447A00C1501C /* XCRemoteSwiftPackageReference "CameraKit" */;
+			productName = CameraKit;
+		};
+		37FD2FE1241244BD00C1501C /* MultilineTextField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37FD2FE0241244BD00C1501C /* XCRemoteSwiftPackageReference "MultilineTextField" */;
+			productName = MultilineTextField;
+		};
+		37FD2FE4241244E900C1501C /* NDKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37FD2FE3241244E900C1501C /* XCRemoteSwiftPackageReference "NDKit" */;
+			productName = NDKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
