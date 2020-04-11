@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		372317AD223BF7EE007617A8 /* NDKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372317A6223BF7C3007617A8 /* NDKit.framework */; };
 		372317AE223BF7EE007617A8 /* NDKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 372317A6223BF7C3007617A8 /* NDKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		372317B2223BF7F5007617A8 /* CameraKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3723179D223BF7B7007617A8 /* CameraKit.framework */; };
-		372317B3223BF7F5007617A8 /* CameraKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3723179D223BF7B7007617A8 /* CameraKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		37468F7A23F9D35200AEB101 /* CameraKit in Resources */ = {isa = PBXBuildFile; fileRef = 37468F7923F9D35200AEB101 /* CameraKit */; };
+		37468F7C23F9D36000AEB101 /* CameraKit in Frameworks */ = {isa = PBXBuildFile; productRef = 37468F7B23F9D36000AEB101 /* CameraKit */; };
+		37468F7E23F9D36500AEB101 /* CameraKit in Frameworks */ = {isa = PBXBuildFile; productRef = 37468F7D23F9D36500AEB101 /* CameraKit */; };
 		3749933B23F93A6600C7843A /* FrameProcessorObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3749933A23F93A6600C7843A /* FrameProcessorObserver.swift */; };
 		37831CF02391C93100AF980E /* MultilineTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 37831CEF2391C93100AF980E /* MultilineTextField */; };
 		37837A4C233D4AA500A4DC18 /* EncoderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37837A4B233D4AA500A4DC18 /* EncoderView.swift */; };
@@ -46,20 +47,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3723179C223BF7B7007617A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37231797223BF7B7007617A8 /* CameraKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 29E43B652180EEE2008BFDD0;
-			remoteInfo = CameraKit;
-		};
-		3723179E223BF7B7007617A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37231797223BF7B7007617A8 /* CameraKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 29FC5028222BD9F6004DC389;
-			remoteInfo = Example;
-		};
 		372317A5223BF7C3007617A8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 372317A0223BF7C3007617A8 /* NDKit.xcodeproj */;
@@ -81,26 +68,12 @@
 			remoteGlobalIDString = 29ED7B0121E9F21F0094D65D;
 			remoteInfo = NDKit;
 		};
-		372317AB223BF7CE007617A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37231797223BF7B7007617A8 /* CameraKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 29E43B642180EEE2008BFDD0;
-			remoteInfo = CameraKit;
-		};
 		372317AF223BF7EE007617A8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 372317A0223BF7C3007617A8 /* NDKit.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 29ED7B0121E9F21F0094D65D;
 			remoteInfo = NDKit;
-		};
-		372317B4223BF7F5007617A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37231797223BF7B7007617A8 /* CameraKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 29E43B642180EEE2008BFDD0;
-			remoteInfo = CameraKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -111,7 +84,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				372317B3223BF7F5007617A8 /* CameraKit.framework in Embed Frameworks */,
 				372317AE223BF7EE007617A8 /* NDKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -129,8 +101,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		37231797223BF7B7007617A8 /* CameraKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CameraKit.xcodeproj; path = Submodule/CameraKit/CameraKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		372317A0223BF7C3007617A8 /* NDKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NDKit.xcodeproj; path = Submodule/NDKit/NDKit.xcodeproj; sourceTree = SOURCE_ROOT; };
+		37468F7923F9D35200AEB101 /* CameraKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CameraKit; path = Submodule/CameraKit; sourceTree = "<group>"; };
 		3749933A23F93A6600C7843A /* FrameProcessorObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameProcessorObserver.swift; sourceTree = "<group>"; };
 		37831CEC2391C91900AF980E /* MultilineTextField */ = {isa = PBXFileReference; lastKnownFileType = text; name = MultilineTextField; path = Submodule/MultilineTextField; sourceTree = SOURCE_ROOT; };
 		37837A4B233D4AA500A4DC18 /* EncoderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncoderView.swift; sourceTree = "<group>"; };
@@ -172,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37468F7E23F9D36500AEB101 /* CameraKit in Frameworks */,
 				379E0C22216F282A004749CC /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,10 +154,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				37C5022623F7378B007F9E12 /* SwiftUIBlurView in Frameworks */,
-				372317B2223BF7F5007617A8 /* CameraKit.framework in Frameworks */,
 				3788918820F7E4DD004D9073 /* opencv2.framework in Frameworks */,
 				37831CF02391C93100AF980E /* MultilineTextField in Frameworks */,
 				372317AD223BF7EE007617A8 /* NDKit.framework in Frameworks */,
+				37468F7C23F9D36000AEB101 /* CameraKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,15 +171,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		37231798223BF7B7007617A8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3723179D223BF7B7007617A8 /* CameraKit.framework */,
-				3723179F223BF7B7007617A8 /* Example.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		372317A1223BF7C3007617A8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,9 +183,9 @@
 		3788917E20F7DCD6004D9073 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37468F7923F9D35200AEB101 /* CameraKit */,
 				37831CEC2391C91900AF980E /* MultilineTextField */,
 				372317A0223BF7C3007617A8 /* NDKit.xcodeproj */,
-				37231797223BF7B7007617A8 /* CameraKit.xcodeproj */,
 				3788917F20F7DCD6004D9073 /* opencv2.framework */,
 			);
 			name = Frameworks;
@@ -341,6 +305,9 @@
 			dependencies = (
 			);
 			name = MorseRelayDebugger;
+			packageProductDependencies = (
+				37468F7D23F9D36500AEB101 /* CameraKit */,
+			);
 			productName = MorseRelayDebugger;
 			productReference = 379E0C08216F253B004749CC /* MorseRelayDebugger.app */;
 			productType = "com.apple.product-type.application";
@@ -358,14 +325,13 @@
 			);
 			dependencies = (
 				372317AA223BF7CE007617A8 /* PBXTargetDependency */,
-				372317AC223BF7CE007617A8 /* PBXTargetDependency */,
 				372317B0223BF7EE007617A8 /* PBXTargetDependency */,
-				372317B5223BF7F5007617A8 /* PBXTargetDependency */,
 			);
 			name = MorseRelay;
 			packageProductDependencies = (
 				37831CEF2391C93100AF980E /* MultilineTextField */,
 				37C5022523F7378B007F9E12 /* SwiftUIBlurView */,
+				37468F7B23F9D36000AEB101 /* CameraKit */,
 			);
 			productName = MorseRelay;
 			productReference = 37AE42B920F64B2F007FF05F /* MorseRelay.app */;
@@ -426,10 +392,6 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 37231798223BF7B7007617A8 /* Products */;
-					ProjectRef = 37231797223BF7B7007617A8 /* CameraKit.xcodeproj */;
-				},
-				{
 					ProductGroup = 372317A1223BF7C3007617A8 /* Products */;
 					ProjectRef = 372317A0223BF7C3007617A8 /* NDKit.xcodeproj */;
 				},
@@ -444,20 +406,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		3723179D223BF7B7007617A8 /* CameraKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CameraKit.framework;
-			remoteRef = 3723179C223BF7B7007617A8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3723179F223BF7B7007617A8 /* Example.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = Example.app;
-			remoteRef = 3723179E223BF7B7007617A8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		372317A6223BF7C3007617A8 /* NDKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -490,6 +438,7 @@
 			files = (
 				37AE42C720F64B30007FF05F /* LaunchScreen.storyboard in Resources */,
 				37AE42C420F64B30007FF05F /* Assets.xcassets in Resources */,
+				37468F7A23F9D35200AEB101 /* CameraKit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,20 +498,10 @@
 			name = NDKit;
 			targetProxy = 372317A9223BF7CE007617A8 /* PBXContainerItemProxy */;
 		};
-		372317AC223BF7CE007617A8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CameraKit;
-			targetProxy = 372317AB223BF7CE007617A8 /* PBXContainerItemProxy */;
-		};
 		372317B0223BF7EE007617A8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = NDKit;
 			targetProxy = 372317AF223BF7EE007617A8 /* PBXContainerItemProxy */;
-		};
-		372317B5223BF7F5007617A8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CameraKit;
-			targetProxy = 372317B4223BF7F5007617A8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -899,6 +838,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		37468F7B23F9D36000AEB101 /* CameraKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CameraKit;
+		};
+		37468F7D23F9D36500AEB101 /* CameraKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CameraKit;
+		};
 		37831CEF2391C93100AF980E /* MultilineTextField */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MultilineTextField;
