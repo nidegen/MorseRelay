@@ -2,6 +2,33 @@
   "object": {
     "pins": [
       {
+        "package": "CameraKit",
+        "repositoryURL": "git@github.com:nidegen/CameraKit.git",
+        "state": {
+          "branch": "master",
+          "revision": "5e08035168d1a0b94856800dd26d01a45d57e594",
+          "version": null
+        }
+      },
+      {
+        "package": "MultilineTextField",
+        "repositoryURL": "git@github.com:nidegen/MultilineTextField.git",
+        "state": {
+          "branch": "master",
+          "revision": "aa392a5f8e48f9fbe72b8914f3f79a3c11a61357",
+          "version": null
+        }
+      },
+      {
+        "package": "NDKit",
+        "repositoryURL": "git@github.com:nidegen/NDKit.git",
+        "state": {
+          "branch": null,
+          "revision": "55067fc5ecaeaf91ee7093503863850db43c4c86",
+          "version": "0.0.0"
+        }
+      },
+      {
         "package": "SwiftUIBlurView",
         "repositoryURL": "https://github.com/danielsaidi/SwiftUIBlurView.git",
         "state": {

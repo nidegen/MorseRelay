@@ -29,7 +29,6 @@ struct ContentView: View {
       DecoderView(decodedText: $frameProcessorObserver.currentText, isProcessing: $frameProcessorObserver.isProcessing, currentSignalState: $frameProcessorObserver.currentSignalState, cameraManager: CameraManager()).tag(0)
       EncoderView().tag(1)
     }
-    .edgesIgnoringSafeArea(.top)
   }
 }
 

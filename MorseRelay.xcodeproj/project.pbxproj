@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		372317AD223BF7EE007617A8 /* NDKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372317A6223BF7C3007617A8 /* NDKit.framework */; };
-		372317AE223BF7EE007617A8 /* NDKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 372317A6223BF7C3007617A8 /* NDKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		37468F7A23F9D35200AEB101 /* CameraKit in Resources */ = {isa = PBXBuildFile; fileRef = 37468F7923F9D35200AEB101 /* CameraKit */; };
-		37468F7C23F9D36000AEB101 /* CameraKit in Frameworks */ = {isa = PBXBuildFile; productRef = 37468F7B23F9D36000AEB101 /* CameraKit */; };
-		37468F7E23F9D36500AEB101 /* CameraKit in Frameworks */ = {isa = PBXBuildFile; productRef = 37468F7D23F9D36500AEB101 /* CameraKit */; };
 		3749933B23F93A6600C7843A /* FrameProcessorObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3749933A23F93A6600C7843A /* FrameProcessorObserver.swift */; };
+		37813B30245CC00300D97E4B /* CameraKit in Frameworks */ = {isa = PBXBuildFile; productRef = 37813B2F245CC00300D97E4B /* CameraKit */; };
+		37813B33245CC04B00D97E4B /* NDKit in Frameworks */ = {isa = PBXBuildFile; productRef = 37813B32245CC04B00D97E4B /* NDKit */; };
+		37813B36245CC0A400D97E4B /* MultilineTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 37813B35245CC0A400D97E4B /* MultilineTextField */; };
 		37831CF02391C93100AF980E /* MultilineTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 37831CEF2391C93100AF980E /* MultilineTextField */; };
 		37837A4C233D4AA500A4DC18 /* EncoderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37837A4B233D4AA500A4DC18 /* EncoderView.swift */; };
 		3788918720F7E356004D9073 /* FrameProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3788918620F7E356004D9073 /* FrameProcessor.mm */; };
@@ -46,37 +44,6 @@
 		37C5022623F7378B007F9E12 /* SwiftUIBlurView in Frameworks */ = {isa = PBXBuildFile; productRef = 37C5022523F7378B007F9E12 /* SwiftUIBlurView */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		372317A5223BF7C3007617A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 372317A0223BF7C3007617A8 /* NDKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 29ED7B0221E9F21F0094D65D;
-			remoteInfo = NDKit;
-		};
-		372317A7223BF7C3007617A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 372317A0223BF7C3007617A8 /* NDKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 29591279221720F40011EC2E;
-			remoteInfo = NiDemo;
-		};
-		372317A9223BF7CE007617A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 372317A0223BF7C3007617A8 /* NDKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 29ED7B0121E9F21F0094D65D;
-			remoteInfo = NDKit;
-		};
-		372317AF223BF7EE007617A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 372317A0223BF7C3007617A8 /* NDKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 29ED7B0121E9F21F0094D65D;
-			remoteInfo = NDKit;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		372317B1223BF7EE007617A8 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -84,7 +51,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				372317AE223BF7EE007617A8 /* NDKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,10 +67,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		372317A0223BF7C3007617A8 /* NDKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NDKit.xcodeproj; path = Submodule/NDKit/NDKit.xcodeproj; sourceTree = SOURCE_ROOT; };
-		37468F7923F9D35200AEB101 /* CameraKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CameraKit; path = Submodule/CameraKit; sourceTree = "<group>"; };
 		3749933A23F93A6600C7843A /* FrameProcessorObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameProcessorObserver.swift; sourceTree = "<group>"; };
-		37831CEC2391C91900AF980E /* MultilineTextField */ = {isa = PBXFileReference; lastKnownFileType = text; name = MultilineTextField; path = Submodule/MultilineTextField; sourceTree = SOURCE_ROOT; };
 		37837A4B233D4AA500A4DC18 /* EncoderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncoderView.swift; sourceTree = "<group>"; };
 		3788917F20F7DCD6004D9073 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = Frameworks/opencv2.framework; sourceTree = "<group>"; };
 		3788918420F7E356004D9073 /* MorseRelay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MorseRelay-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -144,7 +107,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37468F7E23F9D36500AEB101 /* CameraKit in Frameworks */,
 				379E0C22216F282A004749CC /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,11 +115,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37813B36245CC0A400D97E4B /* MultilineTextField in Frameworks */,
 				37C5022623F7378B007F9E12 /* SwiftUIBlurView in Frameworks */,
 				3788918820F7E4DD004D9073 /* opencv2.framework in Frameworks */,
 				37831CF02391C93100AF980E /* MultilineTextField in Frameworks */,
-				372317AD223BF7EE007617A8 /* NDKit.framework in Frameworks */,
-				37468F7C23F9D36000AEB101 /* CameraKit in Frameworks */,
+				37813B33245CC04B00D97E4B /* NDKit in Frameworks */,
+				37813B30245CC00300D97E4B /* CameraKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,21 +134,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		372317A1223BF7C3007617A8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				372317A6223BF7C3007617A8 /* NDKit.framework */,
-				372317A8223BF7C3007617A8 /* NiDemo.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		3788917E20F7DCD6004D9073 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				37468F7923F9D35200AEB101 /* CameraKit */,
-				37831CEC2391C91900AF980E /* MultilineTextField */,
-				372317A0223BF7C3007617A8 /* NDKit.xcodeproj */,
 				3788917F20F7DCD6004D9073 /* opencv2.framework */,
 			);
 			name = Frameworks;
@@ -306,7 +257,6 @@
 			);
 			name = MorseRelayDebugger;
 			packageProductDependencies = (
-				37468F7D23F9D36500AEB101 /* CameraKit */,
 			);
 			productName = MorseRelayDebugger;
 			productReference = 379E0C08216F253B004749CC /* MorseRelayDebugger.app */;
@@ -324,14 +274,14 @@
 			buildRules = (
 			);
 			dependencies = (
-				372317AA223BF7CE007617A8 /* PBXTargetDependency */,
-				372317B0223BF7EE007617A8 /* PBXTargetDependency */,
 			);
 			name = MorseRelay;
 			packageProductDependencies = (
 				37831CEF2391C93100AF980E /* MultilineTextField */,
 				37C5022523F7378B007F9E12 /* SwiftUIBlurView */,
-				37468F7B23F9D36000AEB101 /* CameraKit */,
+				37813B2F245CC00300D97E4B /* CameraKit */,
+				37813B32245CC04B00D97E4B /* NDKit */,
+				37813B35245CC0A400D97E4B /* MultilineTextField */,
 			);
 			productName = MorseRelay;
 			productReference = 37AE42B920F64B2F007FF05F /* MorseRelay.app */;
@@ -387,15 +337,12 @@
 			mainGroup = 37AE42B020F64B2F007FF05F;
 			packageReferences = (
 				37C5022423F7378B007F9E12 /* XCRemoteSwiftPackageReference "SwiftUIBlurView" */,
+				37813B2E245CC00300D97E4B /* XCRemoteSwiftPackageReference "CameraKit" */,
+				37813B31245CC04B00D97E4B /* XCRemoteSwiftPackageReference "NDKit" */,
+				37813B34245CC0A400D97E4B /* XCRemoteSwiftPackageReference "MultilineTextField" */,
 			);
 			productRefGroup = 37AE42BA20F64B2F007FF05F /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 372317A1223BF7C3007617A8 /* Products */;
-					ProjectRef = 372317A0223BF7C3007617A8 /* NDKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				37AE42B820F64B2F007FF05F /* MorseRelay */,
@@ -404,23 +351,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		372317A6223BF7C3007617A8 /* NDKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = NDKit.framework;
-			remoteRef = 372317A5223BF7C3007617A8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		372317A8223BF7C3007617A8 /* NiDemo.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = NiDemo.app;
-			remoteRef = 372317A7223BF7C3007617A8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		379E0C06216F253B004749CC /* Resources */ = {
@@ -438,7 +368,6 @@
 			files = (
 				37AE42C720F64B30007FF05F /* LaunchScreen.storyboard in Resources */,
 				37AE42C420F64B30007FF05F /* Assets.xcassets in Resources */,
-				37468F7A23F9D35200AEB101 /* CameraKit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,19 +420,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		372317AA223BF7CE007617A8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = NDKit;
-			targetProxy = 372317A9223BF7CE007617A8 /* PBXContainerItemProxy */;
-		};
-		372317B0223BF7EE007617A8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = NDKit;
-			targetProxy = 372317AF223BF7EE007617A8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		379E0C10216F253C004749CC /* Main.storyboard */ = {
@@ -710,7 +626,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C56P24GUF3;
+				DEVELOPMENT_TEAM = LVS4T6PPZ4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -739,7 +655,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C56P24GUF3;
+				DEVELOPMENT_TEAM = LVS4T6PPZ4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -827,6 +743,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		37813B2E245CC00300D97E4B /* XCRemoteSwiftPackageReference "CameraKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:nidegen/CameraKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		37813B31245CC04B00D97E4B /* XCRemoteSwiftPackageReference "NDKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:nidegen/NDKit.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.0.0;
+			};
+		};
+		37813B34245CC0A400D97E4B /* XCRemoteSwiftPackageReference "MultilineTextField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:nidegen/MultilineTextField.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		37C5022423F7378B007F9E12 /* XCRemoteSwiftPackageReference "SwiftUIBlurView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielsaidi/SwiftUIBlurView.git";
@@ -838,13 +778,20 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		37468F7B23F9D36000AEB101 /* CameraKit */ = {
+		37813B2F245CC00300D97E4B /* CameraKit */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 37813B2E245CC00300D97E4B /* XCRemoteSwiftPackageReference "CameraKit" */;
 			productName = CameraKit;
 		};
-		37468F7D23F9D36500AEB101 /* CameraKit */ = {
+		37813B32245CC04B00D97E4B /* NDKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = CameraKit;
+			package = 37813B31245CC04B00D97E4B /* XCRemoteSwiftPackageReference "NDKit" */;
+			productName = NDKit;
+		};
+		37813B35245CC0A400D97E4B /* MultilineTextField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37813B34245CC0A400D97E4B /* XCRemoteSwiftPackageReference "MultilineTextField" */;
+			productName = MultilineTextField;
 		};
 		37831CEF2391C93100AF980E /* MultilineTextField */ = {
 			isa = XCSwiftPackageProductDependency;

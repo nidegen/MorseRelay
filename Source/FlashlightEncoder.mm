@@ -47,6 +47,7 @@
     }
 
   });
+  _terminationCallback = ^void() {};
   return self;
 }
 

@@ -11,8 +11,15 @@ import MultilineTextField
 
 struct EncoderView: View {
   @State var message: String = "" //create State
+  @State var isEmitting = false
   
   let encoder = FlashlightEncoder()
+  
+//  init() {
+//    encoder.terminationCallback = {
+//      self.$isEmitting. = false
+//    }
+//  }
   
   var body: some View {
     VStack {
@@ -39,6 +46,7 @@ struct EncoderView: View {
   
   var morseButton: some View {
     Button(action: {
+      self.isEmitting = true
       self.encoder.emitMorseMessage(self.message)
     }) {
       Text("Morse").frame(width: 150, height: 60, alignment: .center).background(Color.green).cornerRadius(10).foregroundColor(.white)
