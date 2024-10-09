@@ -1,0 +1,34 @@
+MARKETING_VERSION = 2.0.1
+CURRENT_PROJECT_VERSION = 1
+
+// Constant
+DEVELOPMENT_TEAM = LVS4T6PPZ4
+PRODUCT_NAME = $(TARGET_NAME)
+IPHONEOS_DEPLOYMENT_TARGET = 18.0
+SWIFT_VERSION = 6.0
+TARGETED_DEVICE_FAMILY = 1,2
+SUPPORTED_PLATFORMS = iphoneos iphonesimulator
+SUPPORTS_MACCATALYST = NO
+CODE_SIGN_STYLE = Automatic
+PRODUCT_BUNDLE_IDENTIFIER = com.nide.morserelay
+GENERATE_INFOPLIST_FILE = YES
+PRODUCT_NAME = $(TARGET_NAME)
+SWIFT_EMIT_LOC_STRINGS = YES
+ENABLE_PREVIEWS = YES
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks
+
+// Assets
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon
+ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor
+DEVELOPMENT_ASSET_PATHS = "Resources/Preview Content"
+
+// Info.plist
+INFOPLIST_FILE = Resources/Info.plist;
+INFOPLIST_KEY_NSCameraUsageDescription = Camera access is used to read morse code and to use the flash light.
+INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES
+INFOPLIST_KEY_UIUserInterfaceStyle = Dark
+INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES
+INFOPLIST_KEY_UILaunchScreen_Generation = YES
+INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "MorseRelay accesses your photo to analyze them in order to help you pick your best photos."

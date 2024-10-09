@@ -1,9 +1,0 @@
-Morse Relay allows you to:
-- Send out morse code over your device's torch
-- Record it by pointing your camera at another device that is emitting a morse message.
-
-Currently, it only supports encoding and decoding from app to app. The algorithms do not support human message fully yet.
-
-For device without torch, the signal is emitted in a blinking box on the screen.
-
-For suggestions or collaborations, contact @nidegen
