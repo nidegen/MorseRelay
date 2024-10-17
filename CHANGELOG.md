@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## 2.0.2
 - Min signal length checks
 
 ## 2.0.1
