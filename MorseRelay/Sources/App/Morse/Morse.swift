@@ -13,4 +13,8 @@ struct MorseConfig {
   let letterGapThreshold: Double = 0.35
   let wordGapThreshold: Double = 1.0
   let wordGapDuration: Double = 1.4
+
+  var minDitDuration: Double {
+    ditDuration / 2
+  }
 }

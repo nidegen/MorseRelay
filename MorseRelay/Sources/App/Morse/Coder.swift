@@ -128,7 +128,9 @@ enum Coder {
     config: MorseConfig = .init()
   ) -> MorseElement? {
     if signal.isOn {
-      if signal.duration <= (config.ditDuration + config.dahDuration) / 2 {
+      if signal.duration <= config.minDitDuration {
+        return nil
+      } else if signal.duration <= (config.ditDuration + config.dahDuration) / 2 {
         return .dit
       } else {
         return .dah

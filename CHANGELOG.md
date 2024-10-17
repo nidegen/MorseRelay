@@ -1,3 +1,11 @@
 # Changelog
 
-- Version 2.0 in SwiftUI
+## Unreleased
+- Min signal length checks
+
+## 2.0.1
+- Refactor of de/endcoding
+- Polished UI
+
+## 2.0 
+- Refactored in SwiftUI
